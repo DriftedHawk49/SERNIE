@@ -1,0 +1,187 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+
+
+mat-form-field{
+    width: 100%;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.form-container{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+   
+}
+
+form{
+    text-align: center;
+}
+
+
+.submit-btn{
+    padding: 14px 40px;
+    background-color: $dBlue;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    margin: 50px 0px 100px 0px;
+    cursor: pointer;
+}
+.zone-pin-container{
+    mat-form-field{
+        width: 46%;
+    }
+
+    .zone{
+        margin-right: 30px;
+    }
+}
+
+
+.map-container[hidden]{
+    display: none;
+}
+
+
+.map-container{
+
+    width: 600px;
+    margin: auto;
+
+
+    h1{
+        font-weight: 400;
+        font-size: 75px;
+        color: $dBlue;
+        margin-bottom: 30px;
+    }
+
+    h3{
+        font-weight: normal;
+        margin-bottom: 50px;
+        color: $lBlue;
+
+    }
+
+
+    .mapElement{
+        height: 400px;
+
+    }
+
+    .selectedAddress{
+        margin-bottom: 20px;
+        display: block;
+        color: $dGreen;
+    }
+}
+
+
+// @media only screen and (min-width: 768px) and (max-width: 1199px){
+
+// }
+
+// @media only screen and(max-width: 767px){
+
+// }
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+    
+    .map-container{
+
+        width: 500px;
+        margin: auto;
+    
+    
+        h1{
+            font-size: 50px;
+        }
+    
+        h3{
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    
+        .selectedAddress{
+            font-size: 18px;
+        }
+    
+    } 
+
+
+
+
+}
+
+
+@media only screen and (max-width: 767px){
+
+
+    .form-container{
+        width: 270px;
+    }
+
+    .zone-pin-container{
+
+        margin-top: 20px;
+
+        mat-form-field{
+            width: 100%;
+        }
+    }
+
+    .map-container{
+
+        width: 280px;
+        margin: auto;
+    
+    
+        h1{
+            font-size: 30px;
+        }
+    
+        h3{
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .mapElement{
+            height: 700px;
+    
+        }
+    
+        .selectedAddress{
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+    
+    }
+
+    .submit-btn{
+        padding: 10px 30px;
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+}

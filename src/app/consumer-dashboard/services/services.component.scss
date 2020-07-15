@@ -1,0 +1,583 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+
+.main-container{
+    background-color: white;
+    padding: 30px 15px;
+    
+    .back-btn{
+        width: 30px;
+        cursor: pointer;
+    }
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+    h1{
+        margin: 0px;
+        font-size: 30px;
+        font-weight: 400;
+        color: $dBlue;
+    }
+
+    .tile-container{   
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+
+        .tile{
+            height: 120px;
+            width: 94px;
+            background-color: $vlgrey;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            img{
+                width: 70px;
+                margin: auto;
+                display: block;
+            }
+
+            span{
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+                color: $dBlue;
+            }
+
+        }
+    }
+
+    .sernie-grocery-container{
+        width: 350px;
+        border-radius: 5px;
+        margin-top: 30px;
+
+
+        a{
+
+            .img-container{
+                background: rgb(0,96,255);
+                background: linear-gradient(90deg, rgba(0,96,255,1) 0%, rgba(0,181,255,1) 100%);
+                padding: 25px 15px;
+                float: left;
+                border-radius: 5px 0px 0px 5px;
+                img{
+
+                }
+
+            }
+
+            .text-container{
+                background-color: $vlBlue;
+                padding: 15px;
+                border-radius: 0px 5px 5px 0px;
+                margin-left: 90px;
+                height: 110px;
+
+                h4{
+                    color: $dBlue;
+                    margin: 0px;
+                    font-size: 20px;
+                    font-weight: 400;
+
+                }
+                p{
+                    color: $lBlue;
+                    margin: 0px;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+
+
+    }
+
+    .serviceProviders{
+        overflow: auto;
+
+        h1{
+            margin-bottom: 20px;
+            
+        }
+
+        mat-expansion-panel{
+            margin-bottom: 10px;
+            box-shadow: none;
+            &:nth-of-type(odd){
+                background-color: $vlBlue;
+            }
+        }
+
+
+        mat-panel-title{
+
+            span{
+                color: $dBlue;
+                vertical-align: middle;
+                margin-top: 5px;
+            }
+            
+
+            img{
+                width: 30px;
+                margin-right: 10px;
+                vertical-align: bottom;
+            }
+        }
+
+        .spProfile{
+            color: $vdBlue;
+
+            .upperPart{
+                margin-top: 15px;
+                display: grid;
+                grid-template-columns: repeat(12,1fr);
+
+                img{
+                    width: 75px;
+                    margin-right: 20px;
+                    border-radius: 50px;
+                    border: 2px solid $vdBlue;
+                }
+
+                .nameDetails{
+
+                    h3{
+                        font-weight: 400;
+                        font-size: 25px;
+                        margin-bottom: 5px;
+                    }
+
+                    h5{
+                        font-weight: 400;
+                        font-size: 15px;
+                        margin-top: 0px;
+                    }
+                }
+            }
+
+            .logistics{
+                text-align: right;
+                margin-bottom: 20px;
+
+                .address{
+                    font-weight: bold;
+                    text-align: left;
+                    span{
+                        font-weight: normal;
+                    }
+                }
+
+                .zone{
+                    font-weight: bold;
+                    text-align: left;
+
+                    span{
+                        font-weight: normal;
+                    }
+                }
+
+                .locate{
+                    padding: 10px 30px;
+                    background-color: $dBlue;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    border: none;
+                }
+            }
+
+            .button-container{
+                display: grid;
+                grid-template-columns: repeat(12,1fr);
+
+                .call, .appoint{
+                    grid-column: span 6/auto;
+                    padding: 5px;
+                    border: none;
+                    color: white;
+                    font-size: 15px;
+
+                    img{
+                        vertical-align: middle;
+                        margin-right: 10px;
+                        width: 18px;
+                    }
+                    
+                }
+
+                .call{
+                    background-color: $dBlue;
+                    border-radius: 5px 0px 0px 5px;
+
+                }
+
+                .appoint{
+                    background-color: $lBlue;
+                    border-radius: 0px 5px 5px 0px;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+
+.cross-btn{
+    display: block;
+    text-align: right;
+    padding-right: 30px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    z-index: 2;
+    
+    .container{
+        width: 586px;
+        height: 313px;
+        margin: 300px auto;
+        background-color: white;
+        border: 2px solid $dBlue;
+        border-radius: 10px;
+        padding: 30px;
+
+        h1, h4{
+            font-weight: normal;
+            margin: 0px;
+        }
+
+        h1{
+            color: $dBlue;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        h4{
+            color: $lBlue;
+            font-size: 12px;
+        }
+
+        .date-selector{
+            margin-top: 15px;
+            text-align: right;
+
+            h4{
+                font-size: 15px;
+                color: $dBlue;
+                text-align: left;
+            }
+
+            .dates-container{
+                margin: 20px auto;
+                display: flex;
+                justify-content: space-evenly;
+                .date-tile{
+                    width: 55px;
+                    height: 55px;
+                    background-color: $dBlue;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    padding: 5px;
+
+                    span{
+                        display: block;
+                        text-align: center;
+                    }
+                    
+                    .date-number{
+                        font-size: 25px;
+                    }
+                    
+                    .day{
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+    
+    .main-container{
+        grid-column: span 12/auto;
+        width: 100%;
+        padding: 15px 10px;
+    
+    
+    
+        h1{
+            font-size: 20px; 
+        }
+    
+        .tile-container{   
+            margin-top: 15px;
+            justify-content: left;
+        
+    
+            .tile{
+                height: 80px;
+                margin-right: 15px;
+                width: 75px;
+                padding: 0px;
+                padding-top: 10px;
+    
+                img{
+                    width: 40px;
+                }
+    
+                span{
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+    
+            }
+        }
+    
+    }
+    
+
+}
+
+@media only screen and (max-width: 767px){
+    .main-container{
+        grid-column: span 12/auto;
+        width: 100%;
+        padding: 15px 10px;
+
+        background-color: whitesmoke;
+        
+        .back-btn{
+            width: 20px;
+        }
+    
+    
+        h1{
+            font-size: 15px; 
+            font-weight: 500;
+        }
+    
+        .tile-container{   
+            margin-top: 10px;
+            justify-content: left;
+        
+    
+            .tile{
+                height: 70px;
+                margin-right: 5px;
+                width: 80px;
+                padding: 0px;
+                padding-top: 5px;
+    
+                img{
+                    width: 40px;
+                }
+    
+                span{
+                    font-size: 10px;
+                    margin-top: 10px;
+                }
+    
+            }
+        }
+
+        .serviceProviders{
+
+            h1{
+                margin-bottom: 20px;
+                
+            }
+    
+            mat-expansion-panel{
+                margin-bottom: 5px;
+            }
+    
+    
+            mat-panel-title{
+    
+                span{
+                    color: $dBlue;
+                    margin-top: 2px;
+                    font-size: 14px;
+                }
+                
+    
+                img{
+                    width: 20px;
+                    border-radius: 15px;
+                    margin-right: 5px;
+                }
+            }
+
+            mat-panel-description{
+
+                img{
+                    width: 50px;
+                }
+            }
+    
+            .spProfile{
+    
+                .upperPart{
+                    margin-top: 10px;
+    
+                    img{
+                        display: none;
+                    }
+    
+                    .nameDetails{
+    
+                        h3{
+                            
+                            font-size: 20px;
+                            margin-top: 0px;
+                        }
+    
+                        h5{
+                            font-size: 12px;
+                            margin-bottom: 0px;
+                        }
+                    }
+                }
+    
+                .logistics{
+    
+                    .address{
+                        font-size: 12px;
+                    }
+    
+                    .zone{
+                        font-size: 12px;
+                    }
+    
+                    .locate{
+                        display: none;
+                    }
+                }
+    
+                .button-container{
+    
+                    .call, .appoint{
+                        
+                        font-size: 10px;
+    
+                        img{
+                            margin-right: 5px;
+                            width: 11px;
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    
+    }
+
+    .overlay{
+
+        .container{
+            width: 250px;
+            height: 270px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 20px;
+    
+            h1, h4{
+                font-weight: normal;
+                margin: 0px;
+            }
+    
+            h1{
+                color: $dBlue;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+    
+            h4{
+                color: $lBlue;
+                font-size: 8px;
+            }
+    
+            .date-selector{
+                margin-top: 12px;
+                text-align: center;
+    
+                h4{
+                    font-size: 15px;
+                    color: $dBlue;
+                    text-align: left;
+                }
+    
+                .dates-container{
+                    margin: 20px auto;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    
+                    .date-tile{
+                        width: 40px;
+                        height: 40px;
+                        background-color: $dBlue;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        margin-right: 5px;
+                        margin-bottom: 5px;
+                        padding: 5px;
+    
+                        span{
+                            display: block;
+                            
+                            text-align: center;
+                        }
+                        
+                        .date-number{
+                            font-size: 20px;
+                        }
+                        
+                        .day{
+                            font-size: 6px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    
+}

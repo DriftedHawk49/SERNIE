@@ -1,0 +1,383 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+$dYellow: #ACA700;
+$Orange: #F96F1A;
+$vlOrange: #FFF0E7;
+$vdOrange: #D34F00;
+
+
+.container{
+    box-shadow: 0px 3px 6px $vlgrey;
+    padding: 30px;
+    height: 606px;
+    border-radius: 10px;
+    overflow-y: auto;
+    h1{
+        margin: 0px;
+        font-weight: 400;  
+        color: $dBlue;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+
+    .expansion-panel-container{
+        margin-bottom: 10px;
+
+        .drop-down{
+            float:right;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform .3s ease-in;
+        }
+
+        .drop-item{
+            box-shadow: 0px 3px 6px $vlgrey;
+            padding: 10px 15px;
+            border-radius: 5px;
+            max-height: 42px;
+            overflow: hidden;
+            transition: all .5s ease-in;
+            margin-bottom: 5px;
+        }
+
+        .shop-name{
+            font-size: 15px;
+            color: $vdBlue;
+            font-weight: 400;
+
+        }
+
+        .call-now-btn{
+            width: 80px;
+            padding: 5px 6px;
+            background-color: $dBlue;
+            color: white;
+            font-size: 12px;
+            display: block;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            img{
+                margin-right: 5px;
+                width: 11px;
+                display: inline-block;
+            }
+        }
+
+        .list-name{
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .date-part{
+            font-size: 10px;
+            display: inline-block;
+        }
+        .status{
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .note{
+            font-size: 12px;
+            padding: 9px;
+            border-radius: 5px;
+        }
+
+        .shop-address{
+            font-size: 12px;
+            color: $lBlue;
+        }
+
+        .list-name,.date-part{
+            margin-right: 10%;
+        }
+
+        .pending{
+            .pen-item{
+                .list-pen{
+                    color: $dBlue;
+                }
+                .date-pen{
+                    color: $dBlue;
+                }
+                .stat-pen{
+                    color: $Orange;
+                }
+                .note-pen{
+                    background-color: $vlOrange;
+                    color: $vdOrange;
+
+                }
+            }
+        }
+
+
+        .accepted{
+            .acc-item{
+                .list-acc{
+                    color: $dBlue;
+                }
+                .date-acc{
+                    color: $dBlue;
+                }
+                .stat-acc{
+                    color: $dYellow;
+                }
+                .note-acc{
+                    background-color: $vlyellow;
+                    color: $dYellow;
+                }
+                
+            }
+
+        }
+
+        .completed{
+            .comp-item{
+                .list-comp{
+                    color: $dBlue;
+                }
+                .date-comp{
+                    color: $dBlue;
+                }
+                .stat-comp{
+                    color: $dGreen;
+                }
+                .note-comp{
+                    background-color: $lGreen;
+                    color: $dGreen;
+                }
+                .delivery-confirmation{
+                    color: $dBlue;
+                    margin-top: 10px;
+                }
+                .cost{
+                    float: right;
+                    color: $vdBlue;
+                    span{
+                        color: $lBlue;
+                    }
+                }
+            }
+        }
+
+        .rejected{
+            .rej-item{
+                .list-rej{
+                    color: $dBlue;
+                }
+                .date-rej{
+                    color: $dBlue;
+                }
+                .stat-rej{
+                    color: $dRed;
+                }
+                .note-rej{
+                    background-color: $lRed;
+                    color: $dRed;
+                }
+            }
+        }
+
+        
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+    
+    .container{
+        box-shadow: 0px 3px 6px $vlgrey;
+        padding: 30px;
+        height: 606px;
+        border-radius: 10px;
+        overflow-y: auto;
+        h1{
+            margin: 0px;
+            font-weight: 400;  
+            color: $dBlue;
+            font-size: 35px;
+        }
+    
+        .expansion-panel-container{
+            margin-top: 50px;
+            margin-bottom: 10px;
+    
+            .drop-down{
+                float:right;
+                cursor: pointer;
+                padding: 5px;
+                transition: transform .3s ease-in;
+            }
+    
+            .drop-item{
+                box-shadow: 0px 3px 6px $vlgrey;
+                padding: 10px 15px;
+                border-radius: 5px;
+                max-height: 42px;
+                overflow: hidden;
+                transition: all .5s ease-in;
+                margin-bottom: 5px;
+            }
+    
+            .shop-name{
+                font-size: 15px;
+                color: $vdBlue;
+                font-weight: 400;
+    
+            }
+    
+            .call-now-btn{
+                width: 80px;
+                padding: 5px 6px;
+                background-color: $dBlue;
+                color: white;
+                font-size: 12px;
+                display: block;
+                text-decoration: none;
+                border-radius: 3px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+    
+                img{
+                    margin-right: 5px;
+                    width: 11px;
+                    display: inline-block;
+                }
+            }
+    
+            .list-name{
+                font-size: 18px;
+            }
+            .date-part{
+                font-size: 10px;
+                display: inline-block;
+            }
+            .status{
+                font-size: 12px;
+                font-weight: 500;
+                display: inline-block;
+            }
+    
+            .note{
+                font-size: 12px;
+                padding: 9px;
+                border-radius: 5px;
+            }
+    
+            .shop-address{
+                font-size: 12px;
+                color: $lBlue;
+            }
+    
+            .list-name,.date-part{
+                margin-right: 10%;
+            }
+    
+            .pending{
+                .pen-item{
+                    .list-pen{
+                        color: $dBlue;
+                    }
+                    .date-pen{
+                        color: $dBlue;
+                    }
+                    .stat-pen{
+                        color: $Orange;
+                    }
+                    .note-pen{
+                        background-color: $vlOrange;
+                        color: $vdOrange;
+    
+                    }
+                }
+            }
+    
+    
+            .accepted{
+                .acc-item{
+                    .list-acc{
+                        color: $dBlue;
+                    }
+                    .date-acc{
+                        color: $dBlue;
+                    }
+                    .stat-acc{
+                        color: $dYellow;
+                    }
+                    .note-acc{
+                        background-color: $vlyellow;
+                        color: $dYellow;
+                    }
+                    
+                }
+    
+            }
+    
+            .completed{
+                .comp-item{
+                    .list-comp{
+                        color: $dBlue;
+                    }
+                    .date-comp{
+                        color: $dBlue;
+                    }
+                    .stat-comp{
+                        color: $dGreen;
+                    }
+                    .note-comp{
+                        background-color: $lGreen;
+                        color: $dGreen;
+                    }
+                    .delivery-confirmation{
+                        color: $dBlue;
+                        margin-top: 10px;
+                    }
+                    .cost{
+                        float: right;
+                        color: $vdBlue;
+                        span{
+                            color: $lBlue;
+                        }
+                    }
+                }
+            }
+    
+            .rejected{
+                .rej-item{
+                    .list-rej{
+                        color: $dBlue;
+                    }
+                    .date-rej{
+                        color: $dBlue;
+                    }
+                    .stat-rej{
+                        color: $dRed;
+                    }
+                    .note-rej{
+                        background-color: $lRed;
+                        color: $dRed;
+                    }
+                }
+            }
+    
+            
+        }
+    
+    }
+
+}

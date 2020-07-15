@@ -1,0 +1,62 @@
+<div class="container">
+    <a routerLink="grocery" class="back"><img src="../../../../assets/left-chevron-blue.svg" alt="Go Back">Your Lists</a>
+    <div *ngIf="!loaded" class="initial">
+        There are no lists associated with your account. Please create a list on previous page for your lists to show here!
+    </div>
+
+    <div *ngIf="loaded">
+    
+    <a (click)="backToShowList($event)" class="mini-back"><img src="../../../../assets/left-chevron-blue.svg" alt="Go Back">Edit Your List</a>
+
+    <div class="grid-container">
+        
+        <div class="listSelector">
+        <div *ngFor="let item of listArray; let i=index">
+            <div (click)="listSelectorClick($event,item,i)" class="listItem">   
+            <span class="item-name" >{{item.listName}}</span>
+            <span class="date">{{item.dateOfCreation.toDateString()}}</span>
+            </div> 
+        </div>
+        </div>
+        <div *ngIf="listToDisplay!=null" class="listDisplayContainer">
+        <div class="listDisplay">
+            <div class="innerList">
+            <h4>{{listToDisplay.ListName}}</h4>
+            <div *ngFor="let item of listToDisplay.listItems" class="listDisplayContainer">
+                <span>{{item}}</span>
+            </div>
+
+            </div>
+        </div>
+        <button (click)="showToEditList($event)">Edit</button>
+    </div>
+        <div *ngIf="listToDisplay!=null" class="listEdit">
+            <input [disabled]="!listToDisplay.editable" type="text" [value]="listToDisplay.listName" class="ListNameEdit">
+
+            <div class="enter-new-element">
+                <input [disabled]="!listToDisplay.editable" (focus)="enterSimulator(evt)" (focusout)="enterDeSimulator(evt)" class="newItem" placeholder="Enter New List Item" type="text">
+                <img id="addListbtn" [ngClass]="{'disabled': !listToDisplay.editable}" src="../../../../assets/add_yellow.svg" (click)="addToList()" alt="Add To List">
+            </div>
+
+            <div class="items-container">
+            <div *ngFor="let item of listToDisplay.listItems; let i = index">
+                <div class="list-edit-item">
+                <input [disabled]="!listToDisplay.editable" value={{item}} type="text">
+                <img [ngClass]="{'disabled': !listToDisplay.editable}" src="../../../../assets/remove.svg" (click)="removeFromList(i)" alt="Remove">
+                </div>
+            </div>
+            </div>
+            
+            <div class="btn-container">
+                <span [ngClass]="{'save-btn': listToDisplay.editable, 'disable-btn': !listToDisplay.editable}" (click)="saveList()" class="btn">Save</span>
+                <span (click)="copyToBuildNew()"  class="btn copy-btn">Copy To Create New</span>
+                <span [ngClass]="{'delete-btn': listToDisplay.editable, '': !listToDisplay.editable}" (click)="deleteList()" class="btn" >Delete</span>
+            </div>
+            
+        
+        </div>
+
+    </div>
+
+</div>
+</div>

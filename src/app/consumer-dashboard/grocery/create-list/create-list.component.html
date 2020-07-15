@@ -1,0 +1,29 @@
+<div class="container">
+
+    <h1>CREATE</h1>
+    <h3>AND SAVE LIST</h3>
+
+    <div class="entry-field">
+        <input (focus)="simulateEnterFunction()" (focusout)="removeSimulatorFunction()" placeholder="Item Name & Quantity" type="text">
+        <img (click)="addNewItem()" id='addItem' src="../../../../assets/add.svg" alt="Add">
+    </div>
+
+    <div class="list-container">
+        <div class="dummyText">
+            For Eg: <br><br> Potato - 1KG<br>
+            Red Chilli Kutti - 1Pkt
+        </div>
+        <div *ngFor="let item of newList; let i = index" class="list">
+            <span>{{item}}</span>
+            <img (click)="removeItem(i)" src="../../../../assets/remove.svg" alt="Remove List">
+        </div>
+    </div>
+
+    <div class="save-container">
+        <input placeholder="List Name" type="text">
+        <a (click)="saveListToDatabase()" class="save-btn">Save</a>
+    </div>
+
+    <a routerLink="alllists" class="check-list-btn">Check All Lists <img src="../../../../assets/arrow-right.svg" alt="Right Arrow"></a>
+
+</div>

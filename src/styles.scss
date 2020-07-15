@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+
+*{
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+}
+
+body, html{
+    padding: 0px; 
+    margin: 0px;
+}
+
+
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+

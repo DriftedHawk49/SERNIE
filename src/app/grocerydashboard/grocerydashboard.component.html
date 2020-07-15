@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1 class="shop-name">{{shopName}}</h1>
+
+    <span (click)="backToCategorySelection()" class="back"> < {{selectedCategory}}</span>
+
+    <div class="grid-container">
+
+        <div *ngIf="!categorySelected" class="selector">
+            <div (click)="selectToDisplay($event)" class="active selector-item"><span class="text">Active Orders</span><span class="indicator">{{activeOrders}}</span></div>
+            <div (click)="selectToDisplay($event)" class="pending selector-item"><span class="text">Pending Orders</span><span class="indicator">{{pendingOrders}}</span></div>
+            <div (click)="selectToDisplay($event)" class="history selector-item"><span class="text">History</span></div>
+        </div>
+
+        <div class="component-container">
+            <app-active-orders></app-active-orders>
+            <app-pending-orders></app-pending-orders>
+            <app-history></app-history>
+        </div>
+
+    </div>
+
+</div>

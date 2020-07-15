@@ -1,0 +1,165 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+
+
+.super-container{
+    margin: 100px 140px 80px 140px;
+
+    .map-container{
+        width: 100%;
+        height: 700px;
+    }
+
+    .link-container{
+        position: absolute;
+        z-index: 4;
+        margin: 15px 0px 15px 15px;
+        width: 500px;
+
+        .service, .history{
+            color: white;
+            width: 250px;
+            display: inline-block;
+            padding: 13px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            
+
+            img{
+                height: 25px;
+                width: 25px;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+
+        .service{
+            background-color: $dBlue;
+            border-radius: 10px 0px 0px 0px;
+            
+            
+        }
+
+        .history{
+            
+            background-color: $lBlue;
+            border-radius: 0px 10px 0px 0px;
+            
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .super-container{
+        margin: 55px;
+    
+        .map-container{
+            // Remove Background URL when implementing map functionality
+            height: 100vmin;
+        }
+    
+        .link-container{
+            position: absolute;
+            z-index: 4;
+            width: 82%;
+            margin: 15px auto 0px 10px;
+
+            router-outlet{
+                grid-column: span 12/auto;
+            }
+    
+            .service, .history{
+               grid-column: span 6/auto;
+                padding: 6px 10px;
+                width: 100%;
+                font-size: 15px;
+                
+    
+                img{
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+
+    
+        }
+    }
+    
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .super-container{
+        margin: 25px;
+    
+        .map-container{
+            display: none;
+        }
+    
+        .link-container{
+            position: relative;
+            width: 97%;
+            margin: 5px 5px 5px 5px;
+
+            router-outlet{
+                grid-column: span 12/auto;
+            }
+    
+            .service, .history{
+                color: white;
+                grid-column: span 6/auto;
+                width: 100%;
+                display: inline-block;
+                padding: 4px 10px;
+                font-size: 13px;
+                cursor: pointer;
+                
+    
+                img{
+                    height: 13px;
+                    width: 13px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                }
+            }
+    
+            .service{
+                background-color: $dBlue;
+                border-radius: 5px 0px 0px 0px;
+                
+                
+            }
+    
+            .history{
+                
+                background-color: $lBlue;
+                border-radius: 0px 5px 0px 0px;
+                
+            }
+    
+        }
+    }
+    
+
+}

@@ -1,0 +1,490 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+
+.main-container{
+    background-color: white;
+    padding: 30px 15px 5px 15px;
+    max-height: 600px;
+    overflow: auto;
+    border: 1px solid $dBlue;
+
+    h4{
+        font-weight: 400;
+    }
+
+
+    .pending, .history{
+
+        h1{
+            margin: 0px 0px 25px 0px;
+            font-weight: 400;
+            color: $dBlue;
+            font-size: 30px;
+        }
+
+        .label-container{
+            margin-bottom: 5px;
+
+            span{
+                font-size: 12px;
+                color: $lBlue;
+                font-style: italic;
+            }
+            
+            .one{
+                margin-left: 20px;
+            }
+
+            .two{
+                margin-left: 30px;
+            }
+
+            .three{
+                margin-left: 120px;
+            }
+        }
+    
+        mat-accordion{
+
+            mat-expansion-panel{
+
+                mat-expansion-panel-header{
+
+                    mat-panel-title{
+
+                    }
+
+                    mat-panel-description{
+
+                        span{
+
+                        }
+                    
+                        .date{
+                            margin-right: 100px;
+                        }
+
+                        .hdate{
+                            margin-right: 70px;
+                        }
+
+                        .status-icon{
+
+                        }
+
+                    }
+                }
+
+                
+            
+            .open-panel{
+
+                margin-top: 10px;
+                .upper-part{
+                    display: grid;
+                    grid-template-columns: repeat(12,1fr);
+
+
+                    .profile-pic{
+                        width: 100px;
+                        grid-column: span 4/auto;
+                        border-radius: 60px;
+                        border: 2px solid $dBlue;
+                    }
+
+                    .details-container{
+                        grid-column: span 8/auto;
+                        margin-top: 10px;
+                    .name{
+                        margin: 0px;
+                        font-size: 25px;
+                    }
+
+                    .profession{
+                        margin: 2px 0px;
+                        font-style: italic;
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: $lBlue;
+                    }
+
+                    .expanded-rating{
+                        width: 60px;
+                    }
+                    
+                    }
+
+                }
+
+                p{
+                    font-weight: 400;
+                    color: $dBlue;
+
+
+                    span{
+                    font-weight: bold;
+                    color: $vdBlue;
+                    }
+                }
+
+                .date-of-appoint{
+
+                }
+
+                .jump{
+
+                }
+
+                .status{
+
+                }
+
+                .service-rate{
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin: 20px 0px;
+
+                    .rate-tile{
+                        width: 30px;
+                        height: 30px;
+                        color: white;
+                        background-color: $dBlue;
+                        font-size: 15px;
+                        cursor: pointer;
+                        display: inline-block;
+                        padding: 6px 10px;
+                        border-radius: 5px;
+                        
+                    }
+                }
+                
+
+                .rating-indicator{
+                    text-align: center;
+                }
+
+                label{
+                    color: $dBlue; 
+                }
+
+                mat-radio-button{
+                    margin-right: 5px;
+                }
+                
+                .call{
+                    padding: 10px;
+                    margin-top: 10px;
+                    text-align: center;
+                    color: white;
+                    background-color: $dBlue;
+                    display: block;
+                    font-size: 20px;
+                    text-decoration: none;
+
+
+
+                    img{
+                        width: 20px;
+                        vertical-align: bottom;
+                    }
+                }
+
+            }
+
+            }
+        
+        }   
+
+
+    
+    }
+
+    .history{
+        margin-top: 30px;
+    }
+
+
+}
+
+
+// Tablet
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+.main-container{
+    
+    .pending, .history{
+
+        h1{
+            
+        }
+
+        .label-container{
+            
+            
+            .one{
+                margin-right: 5vmin;
+            }
+
+            .two{
+                
+            }
+
+            .three{
+                margin-left: 100px;
+            }
+        }
+    
+        mat-accordion{
+
+            mat-expansion-panel{
+
+                mat-expansion-panel-header{
+
+                    mat-panel-title{
+                        
+                        margin: 0px;
+                    }
+
+                    mat-panel-description{
+
+                        span{
+
+                        }
+                    
+                        .date{
+                            margin-right: 100px;
+                        }
+
+                        .hdate{
+                            margin-right: 70px;
+                        }
+
+                        .status-icon{
+
+                        }
+
+                    }
+                }
+
+                
+            
+            
+            }
+        
+        }   
+
+
+    
+    }
+
+
+
+}
+
+}
+
+// Phone
+
+@media only screen and (max-width: 767px){
+
+    
+
+    .main-container{
+       
+
+        h4{
+            font-size: 12px;
+        }
+
+        .pending, .history{
+
+            h1{
+                font-size: 20px;
+            }
+
+            .label-container{
+                margin-bottom: 5px;
+                // margin-left: 10px;
+    
+                span{
+                    font-size: 8px;
+                }
+                
+                .one{
+                    margin-left: 5px;
+                }
+    
+                .two{
+                    margin-left: 25px;
+                }
+    
+                .three{
+                    margin-left: 35px;
+                }
+            }
+
+            mat-accordion{
+
+                mat-expansion-panel{
+    
+                    mat-expansion-panel-header{
+                        padding: 0px 10px;
+                        mat-panel-title{
+                            font-size: 12px;
+                            width: 60px;
+                            padding-top: 2px;
+                            margin: 0px;
+                        }
+    
+                        mat-panel-description{
+                            span{
+                                
+                            }
+                        
+                            .date, .hdate{
+                                margin-right: 0px;
+                                font-size: 10px;
+                                width: 90px;
+                                padding-top: 5px;
+                                
+                            }
+
+                            .rating{
+                                padding-top: 3px;
+                                font-size: 12px;
+                            }
+    
+                            .status-icon{
+
+                                img{
+                                    width: 15px;
+                                    vertical-align: bottom;
+                                }
+                            }
+    
+                        }
+                    }
+    
+                    
+                
+                .open-panel{
+    
+                    .upper-part{
+                        
+                        .profile-pic{
+                            width: 50px;
+                            border-radius: 40px;
+                        }
+    
+                        .details-container{
+                            
+                        .name{
+                            font-size: 18px;
+                        }
+    
+                        .profession{
+                            margin-bottom: 0px;
+                            font-size: 12px;
+                        }
+    
+                        .expanded-rating{
+                            width: 40px;
+                        }
+                        
+                        }
+    
+                    }
+    
+                    p{
+                        font-size: 10px;
+                        margin: 5px 0px;
+    
+    
+                        span{
+                        
+                        }
+                    }
+    
+                    .date-of-appoint{
+    
+                    }
+    
+                    .jump{
+    
+                    }
+    
+                    .status{
+    
+                    }
+    
+                    .service-rate{
+                        display: flex;
+                        justify-content: space-evenly;
+                        margin: 20px 0px;
+    
+                        .rate-tile{
+                            width: 30px;
+                            height: 30px;
+                            color: white;
+                            background-color: $dBlue;
+                            font-size: 15px;
+                            cursor: pointer;
+                            display: inline-block;
+                            padding: 6px 10px;
+                            border-radius: 5px;
+                            
+                        }
+                    }
+                    
+    
+                    .rating-indicator{
+                        text-align: center;
+                    }
+    
+                    label{
+                        color: $dBlue; 
+                    }
+    
+                    mat-radio-button{
+                        margin-right: 5px;
+                    }
+                    
+                    .call{
+                        padding: 10px;
+                        margin-top: 10px;
+                        
+                        font-size: 15px;
+    
+    
+    
+                        img{
+                            width: 15px;
+                            vertical-align: middle;
+                        }
+                    }
+    
+                }
+    
+                }
+            
+            }   
+    
+
+        }
+
+        
+
+
+
+
+
+    }
+
+}

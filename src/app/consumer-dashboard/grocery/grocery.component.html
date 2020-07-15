@@ -1,0 +1,36 @@
+<div class="container">
+<div class="main-heading-container">
+<a routerLink="dashboard" class="back"><img src="../../../assets/left_chevron.svg" alt="Go Back"></a>
+<img src="../../../assets/sernie_icon.svg" alt="SERNIE GROCERY">
+<span class="text">grocery</span>
+</div>
+
+<div class="navigator">
+    <div (click)="showElement($event)" class="create box">
+        <div class="text-part">
+            <p class="big-text">CREATE</p>
+            <p class="small-text">AND SAVE LIST</p>
+        </div>
+        <img src="../../../assets/create.svg" alt="Create" class="icon">
+    </div>
+    <div (click)="showElement($event)" class="place box">
+        <div class="text-part">
+            <p class="big-text">PLACE</p>
+            <p class="small-text">YOUR ORDER</p>
+        </div>
+        <img src="../../../assets/order.svg" alt="Order" class="icon">
+    </div>
+    <div (click)="showElement($event)" class="history box">
+        <div class="text-part">
+            <p class="big-text">HISTORY</p>
+        </div>
+        <img src="../../../assets/history_grocery.svg" alt="History" class="icon">
+    </div>
+</div>
+
+<div class="items-container">
+    <app-create-list class="containment createListElement"></app-create-list>
+    <app-place-order class="containment placeOrderElement"></app-place-order>
+    <app-history-orders class="containment checkHistoryElement"></app-history-orders>
+</div>
+</div>

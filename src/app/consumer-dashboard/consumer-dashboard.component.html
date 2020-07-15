@@ -1,0 +1,13 @@
+<div class="super-container">
+        <div class="link-container">
+                <div class="grid-container">
+                <a matRipple (click)="switchColors($event)" routerLink="services" class="service"><img src="../../assets/gear.svg" alt="service">Services</a>
+                <a matRipple (click)="switchColors($event)" routerLink="history" class="history"><img src="../../assets/history.svg" alt="history">History</a>
+                </div>
+                <router-outlet></router-outlet>
+        </div>
+
+    <div class="map-container"></div>
+
+</div>
+

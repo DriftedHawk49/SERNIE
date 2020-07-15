@@ -1,0 +1,142 @@
+<div class="main-container">
+
+    <h4 *ngIf="loading&&!error&&!noResult">Loading...</h4>
+    <h4 *ngIf="error">Error in Fetching Requests</h4>
+    
+
+    <div class="pending">
+        
+        <h1>Pending Appointments</h1>
+        
+        <h4 *ngIf="!pendingRequests.length||noResult">No Pending Requests!</h4>
+
+        <div *ngIf="!loading&&!error">
+        <div *ngIf="pendingRequests.length">
+        <div class="label-container">
+            <span class="one">Type Of Service</span>
+            <span class="two">Date Created</span>
+            <span class="three">Status</span>
+        </div>
+
+        <mat-accordion >
+            <mat-expansion-panel *ngFor="let req of pendingRequests">
+                <mat-expansion-panel-header>
+                        <mat-panel-title>
+                                {{ req.typeOfService}}
+                            </mat-panel-title>
+            
+                            <mat-panel-description>
+                                <span class="date">{{ req.dateCreated }}</span>
+                                <span *ngIf="req.accepted&&!req.markDoneConsumer" class="status-icon"><img src="../../../assets/accept.svg" alt="status"></span>
+                                <span *ngIf="!req.accepted&&!req.rejected" class="status-icon"><img src="../../../assets/info-blue.svg" alt="status"></span>
+                                <span *ngIf="req.rejected" class="status-icon"><img src="../../../assets/cross-blue.svg" alt="status"></span>
+                            </mat-panel-description>
+                </mat-expansion-panel-header>
+
+               
+
+                <div class="open-panel">
+                    <div class="upper-part">
+                        <img src="../../../assets/boy.svg" alt="profile" class="profile-pic">
+                        <div class="details-container">
+                            <h1 class="name">{{req.nameOfSP}}</h1>
+                            <h3 class="profession">{{req.typeOfService}}</h3>
+                            <img src="../../../assets/fourstar.svg" alt="rating" class="expanded-rating">
+                        </div>
+                    </div>
+
+                    <p>Date Created : <span class="date-of-appoint">{{ req.dateCreated }}</span></p>
+                    <p>Date Scheduled : <span class="date-of-appoint">{{ req.dateScheduled }}</span></p>
+                    <!-- <p>Request Jump : <span class="jump">Yes</span></p> -->
+                    <p *ngIf="req.accepted&&!req.markDoneConsumer">Status : <span class="status">Accepted</span></p>
+                    <p *ngIf="!req.accepted&&!req.rejected">Status : <span class="status">Not decided yet by the service provider</span></p>
+                    <p *ngIf="req.rejected">Status : <span class="status">Rejected</span></p>
+                    
+                    <a matRipple href="tel:{{req.phone}}" class="call"><img src="../../../assets/call.svg" alt="call icon"> Call : {{req.phone}}</a>
+                </div>
+
+            </mat-expansion-panel>
+
+
+        </mat-accordion>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div *ngIf="!loading&&!error" class="history">
+
+            <h1>History</h1>
+
+            <h4 *ngIf="!historyRequests.length">No history Found! </h4>
+
+            <div *ngIf="historyRequests.length">
+
+            <div class="label-container">
+                <span class="one">Type Of Service</span>
+                <span class="two">Date Created</span>
+                <span class="three">Rating</span>
+            </div>
+    
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let r of historyRequests">
+                    <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                    {{r.typeOfService}}
+                                </mat-panel-title>
+                
+                                <mat-panel-description>
+                                    <span class="hdate">{{ r.dateCreated }}</span>
+                                    <span class="rating">{{r.rating+0}}/5</span>
+                                </mat-panel-description>
+                    </mat-expansion-panel-header>
+    
+                   
+    
+                    <div class="open-panel">
+                        <div class="upper-part">
+                            <img src="../../../assets/boy.svg" alt="profile" class="profile-pic">
+                            <div class="details-container">
+                                <h1 class="name">{{r.nameOfSP}}</h1>
+                                <h3 class="profession">{{r.typeOfService}}</h3>
+                                <img src="../../../assets/fourstar.svg" alt="rating" class="expanded-rating"> <!-- This rating is SP rating. Don't confuse it with rating of Request. Part of Major project -->
+                            </div>
+                        </div>
+    
+                        <p>Date Of Appointment : <span class="date-of-appoint">{{ r.dateScheduled }}</span></p>
+                        <p *ngIf="r.accepted">Status : <span class="date-of-appoint">Accepted</span></p>
+                        <p *ngIf="r.rejected">Status : <span class="date-of-appoint">Rejected</span></p>
+
+                        <div *ngIf="r.ratingAllowance">
+                         
+                        <p class="rate-head">Rate their service out of 5 :</p>
+                        <div class="service-rate">
+                            <div matRipple (click)="rate($event.srcElement.innerText,r.id)" class="rate-tile">1</div>
+                            <div matRipple (click)="rate($event.srcElement.innerText,r.id)" class="rate-tile">2</div>
+                            <div matRipple (click)="rate($event.srcElement.innerText,r.id)" class="rate-tile">3</div>
+                            <div matRipple (click)="rate($event.srcElement.innerText,r.id)" class="rate-tile">4</div>
+                            <div matRipple (click)="rate($event.srcElement.innerText,r.id)" class="rate-tile">5</div>
+                        </div>
+
+                        </div>
+
+                        <div class="rating-indicator">
+                        <img [src]="ratingSRC[r.rating-1]" alt="No Rating">
+                            
+                        </div>
+
+                        <a matRipple href="tel:+91{{r.phone}}" class="call"><img src="../../../assets/call.svg" alt="call icon"> Call : {{r.phone}}</a>
+                    </div>
+    
+                </mat-expansion-panel>
+    
+    
+            </mat-accordion>
+
+        </div>
+    </div>
+
+</div>

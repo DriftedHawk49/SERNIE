@@ -1,0 +1,73 @@
+<div class="container">
+
+    <h1>HISTORY</h1>
+
+    <p *ngIf="loading">Loading...</p>
+    <p *ngIf="emptyRequest">Seems like nothing is in here....</p>
+
+
+    <div *ngIf="!loading" >
+
+    <div *ngFor="let item of allRequests;let i = index; trackBy:trackFn" class="expansion-panel-container">
+
+        <div *ngIf="!item.accepted&&!item.rejected" class="pending">
+            <div class="pen-item drop-item">
+                <img (click)="dropdown($event)" src="../../../../assets/drop-down.svg" alt="drop" class="drop-down">
+                <span class="list-name list-pen">{{item.listName}}</span>
+                <span class="date-part date-pen">{{item.dateOfGeneration.toLocaleDateString()}}</span>
+                <span class="status stat-pen">Pending</span>
+                <h2 class="shop-name">{{item.shopName}}</h2>
+                <p class="shop-address">{{item.shopAddress}}</p>
+                <a class="call-now-btn" href="tel:{{item.shopPhone}}"><img src="../../../../assets/call.svg" alt="Call Now"> Call Now</a>
+                <p class="note note-pen">Shop is yet to accept your order.</p>
+            </div>
+        </div>
+
+        <div *ngIf="item.accepted&&!item.rejected" class="accepted">
+            <div class="acc-item drop-item">
+                <img (click)="dropdown($event)" src="../../../../assets/drop-down.svg" alt="drop" class="drop-down">
+                <span class="list-name list-acc">{{item.listName}}</span>
+                <span class="date-part date-acc">{{item.dateOfGeneration.toLocaleDateString()}}</span>
+                <span class="status stat-acc">Accepted</span>
+                <h2 class="shop-name">{{item.shopName}}</h2>
+                <p class="shop-address">{{item.shopAddress}}</p>
+
+                <a class="call-now-btn" href="tel:{{item.shopPhone}}"><img src="../../../../assets/call.svg" alt="Call Now"> Call Now</a>
+
+                <p class="note note-acc">Shop has accepted the order and your order is being prepared.</p>
+            </div>
+        </div>
+
+        <div *ngIf="item.accepted&&item.rejected" class="completed">
+            <div class="comp-item drop-item">
+                <img (click)="dropdown($event)" src="../../../../assets/drop-down.svg" alt="drop" class="drop-down">
+                <span class="list-name list-comp">{{item.listName}}</span>
+                <span class="date-part date-comp">{{item.dateOfGeneration.toLocaleDateString()}}</span>
+                <span class="status stat-comp">Completed</span>
+                <h2 class="shop-name">{{item.shopName}}</h2>
+                <p class="shop-address">{{item.shopAddress}}</p>
+                <a href="tel:{{item.phone}}" class="call-now-btn"><img src="../../../../assets/call.svg" alt="Call Now"> Call Now</a>                
+                <mat-checkbox *ngIf="!item.delivered" (click)="delivered(i)" color="primary" class="delivery-confirmation">Delivered?</mat-checkbox>
+                <span class="cost">Total Cost: <span>INR {{item.totalCost}}</span></span>
+                <p *ngIf="!item.delivered" class="note note-comp">Shop has accepted the order and your order is either out for delivery or delivered</p>
+                <p *ngIf="item.delivered" class="note note-comp">Shop has accepted the order and your order is delivered</p>
+            </div>
+        </div>
+
+        <div *ngIf="!item.accepted&&item.rejected" class="rejected">
+            <div class="rej-item drop-item">
+                <img (click)="dropdown($event)" src="../../../../assets/drop-down.svg" alt="drop" class="drop-down">
+                <span class="list-name list-rej">{{item.listName}}</span>
+                <span class="date-part date-rej">{{item.dateOfGeneration.toLocaleDateString()}}</span>
+                <span class="status stat-rej">Rejected</span>
+                <h2 class="shop-name">{{item.shopName}}</h2>
+                <p class="shop-address">{{item.shopAddress}}</p>
+                <p class="note note-rej">Your order has been rejected due to insufficient inventory.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>

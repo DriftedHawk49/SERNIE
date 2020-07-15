@@ -1,0 +1,376 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+$Yellow: #E1DA0A;
+
+.container{
+
+    margin: 50px 140px 20px 140px;
+    .navigator{
+        font-size: 30px;
+        font-weight: 500;
+        color: $vdBlue;
+        cursor: pointer;
+        text-decoration: none;
+
+        img{
+            vertical-align: middle;
+        }
+
+    }
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        margin-top: 50px;
+
+
+        .info-show{
+            grid-column: span 6/auto;
+            .shop-name{
+                font-size: 25px;
+                font-weight: 400;
+                color: $vdBlue;
+                margin-bottom: 0;
+                
+            }
+            .shop-address{
+                color: $dBlue;
+                width: 500px;
+                margin: 10px 0px 0px 0px;
+            }
+
+            .upload-container{
+                margin-top: 50px;
+                margin-bottom: 30px;
+                .upload{
+                    background-color: $dBlue;
+                    border: none;
+                    border-radius: 3px;
+                    color: white;
+                    font-size: 20px;
+                    padding: 10px;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    img{
+                        vertical-align: middle;
+                        width: 30px;
+                    }   
+                }
+
+                span{
+                    font-size: 20px;
+                    color: $vdBlue;
+                    font-weight: 500;
+                }
+
+            }
+
+            .list-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .list{
+                    padding: 10px 0px;
+                    font-size: 15px;
+                    color: white;
+                    background-color: $lBlue;
+                    width: 150px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+            }
+
+        }
+        .list-show{
+            grid-column: span 6/auto;
+            text-align: center;
+
+            .full-list{
+                width: 400px;
+                margin: auto;
+                background-color: $vlyellow;
+                padding: 30px;
+                margin-bottom: 30px;
+                height: 400px;
+                overflow: auto;
+
+                .list-name{
+                    text-align: left;
+                    margin: 0px 0px 20px 0px;
+                    font-weight: 500;
+                    color: rgb(53, 53, 53);
+                }
+
+                .list-item{
+                    text-align: left;
+                    display: block;
+                    color: rgb(100, 100, 100);
+                    border-bottom: 1px solid lightgray;
+                    margin-bottom: 10px;
+                    
+                }
+
+            }
+
+            .picture-list{
+
+                .list-photo{
+                    height: 400px;
+                    width: 225px;
+                }
+
+            }
+
+            .reset-btn{
+                padding: 8px 15px;
+                background-color: $dRed;
+                color: white;
+                border-radius: 3px;
+                margin-left: 30px;
+                cursor: pointer;
+            }
+            
+            .place-order{
+                background-color: $vdBlue;
+                color: white;
+                font-size: 25px;
+                padding: 10px 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    .container{
+
+        margin: 50px 55px 20px 55px;
+        .navigator{
+            
+    
+            img{
+                
+            }
+    
+        }
+    
+        .grid-container{
+            
+    
+    
+            .info-show{
+                grid-column: span 12/auto;
+                .shop-name{
+                   
+                    
+                }
+                .shop-address{
+                    
+                }
+    
+                .upload-container{
+                   
+                    .upload{
+                        
+                        img{
+                            
+                        }   
+                    }
+    
+                    span{
+                        
+                    }
+    
+                }
+    
+                .list-container{
+                    
+    
+                    .list{
+                       
+                    }
+    
+                }
+    
+            }
+            .list-show{
+                grid-column: span 12/auto;
+    
+                .full-list{
+                    
+    
+                    .list-name{
+                        
+                    }
+    
+                    .list-item{
+                        
+                        
+                    }
+    
+                }
+    
+                .picture-list{
+    
+                    .list-photo{
+                       
+                    }
+    
+                }
+    
+                .reset-btn{
+                    
+                }
+                
+                .place-order{
+                    
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .container{
+
+        margin: 20px 30px 20px 30px;
+        .navigator{
+            font-size: 15px;
+            
+            img{
+                width: 10px;
+            }
+    
+        }
+    
+        .grid-container{
+            
+            margin-top: 20px;
+    
+            .info-show{
+                grid-column: span 12/auto;
+                .shop-name{
+                   font-size: 20px;
+                    
+                }
+                .shop-address{
+                    font-size: 12px;
+                    width: auto;
+                }
+    
+                .upload-container{
+                   
+                    .upload{
+                        font-size: 12px;
+                        padding: 10px 5px;
+                        img{
+                            width: 20px;
+                        }   
+                    }
+    
+                    span{
+                        font-size: 15px;
+                    }
+    
+                }
+    
+                .list-container{
+                    
+    
+                    .list{
+                       
+                    }
+    
+                }
+    
+            }
+            .list-show{
+                grid-column: span 12/auto;
+    
+                .full-list{
+                    width: 100%;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                    height: 350px;
+                    overflow: auto;
+    
+                    .list-name{
+                        text-align: left;
+                        margin: 0px 0px 10px 0px;
+                        font-weight: 500;
+                        font-size: 15px;
+                        color: rgb(53, 53, 53);
+                    }
+    
+                    .list-item{
+                        
+                        font-size: 12px;
+                       
+                        
+                        margin-bottom: 5px;
+                        
+                    }
+    
+                }
+    
+                .picture-list{
+    
+                    .list-photo{
+                        height: 400px;
+                        width: 225px;
+                    }
+    
+                }
+    
+                .reset-btn{
+                    padding: 8px 15px;
+                    background-color: $dRed;
+                    color: white;
+                    border-radius: 3px;
+                    margin-left: 30px;
+                    font-size: 12px;
+                    cursor: pointer;
+                }
+                
+                .place-order{
+                    background-color: $vdBlue;
+                    color: white;
+                    font-size: 15px;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}

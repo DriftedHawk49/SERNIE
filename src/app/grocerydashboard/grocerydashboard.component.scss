@@ -1,0 +1,229 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+$dYellow: #ACA700;
+$Orange: #F96F1A;
+$vlOrange: #FFF0E7;
+$vdOrange: #D34F00;
+
+
+
+.container{
+
+    margin: 50px 140px 50px 140px;
+
+    .shop-name{
+        font-size: 40px;
+        font-weight: 500;
+        color: $vdBlue;
+        margin: 0px;
+    }
+
+    .back{
+        margin-top: 20px;
+        padding: 5px 20px;
+        display: inline-block;
+        border-radius: 20px;
+        background-color: $lBlue;
+        cursor: pointer;
+        color: white;
+        display: none;
+    }
+
+    .grid-container{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        gap: 10px;
+
+        .selector{
+            grid-column: span 4/auto;
+            .selector-item{
+                margin-bottom: 20px;
+                box-shadow: 0px 0px 6px $vlgrey;
+                padding: 10px 20px;
+                border-radius: 5px;
+                width: 300px;
+                color: $vdBlue;
+                cursor: pointer;
+                .text{
+                    font-size: 20px;
+                }
+
+                .indicator{
+                    // height: 25px;
+                    border-radius: 20px;
+                    background-color: $dRed;
+                    color: white;
+                    font-size: 15px;
+                    padding: 5px;
+                    float: right;
+                }
+            }
+
+            .selected{
+                background-color: $vdBlue;
+                color: white!important;
+            }
+
+        }
+
+        .component-container{
+            grid-column: span 8/auto;
+            app-active-orders{
+                display: none;
+            }
+
+            app-pending-orders{
+                display: none;
+            }
+
+            app-history{
+                display: none;
+            }
+
+        }
+
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .container{
+
+        margin: 50px 54px 50px 54px;
+    
+        .shop-name{
+            font-size: 30px;
+        }
+
+        .back{
+
+        }
+    
+        .grid-container{
+            margin-top: 30px;
+            
+    
+            .selector{
+                grid-column: span 12/auto;
+                .selector-item{
+                    
+                    width: 100%;
+                    
+                    .text{
+                        font-size: 18px;
+                    }
+    
+                    .indicator{
+                        height: 23px;
+                        width: 23px;
+                        font-size: 13px;
+                        padding: 4px 4px 4px 4px;
+                        
+                    }
+                }
+    
+                .selected{
+                    background-color: $vdBlue;
+                    color: white!important;
+                }
+    
+            }
+    
+            .component-container{
+                grid-column: span 12/auto;
+                app-active-orders{
+                }
+    
+                app-pending-orders{
+                    
+                }
+    
+                app-history{
+                    
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .container{
+
+        margin: 50px 30px 50px 30px;
+    
+        .shop-name{
+            font-size: 20px;
+        }
+
+        .back{
+            padding: 5px 20px;
+            font-size: 12px;
+        }
+    
+        .grid-container{
+            margin-top: 30px;
+            
+    
+            .selector{
+                grid-column: span 12/auto;
+                .selector-item{
+                    
+                    width: 100%;
+                    
+                    .text{
+                        font-size: 18px;
+                    }
+    
+                    .indicator{
+                        height: 23px;
+                        width: 23px;
+                        font-size: 13px;
+                        padding: 4px 4px 4px 4px;
+                        
+                    }
+                }
+    
+                .selected{
+                   
+                }
+    
+            }
+    
+            .component-container{
+                grid-column: span 12/auto;
+                app-active-orders{
+                   
+                }
+    
+                app-pending-orders{
+                    
+                }
+    
+                app-history{
+                    
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}

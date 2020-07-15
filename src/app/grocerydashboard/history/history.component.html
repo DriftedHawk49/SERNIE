@@ -1,0 +1,59 @@
+
+<div class="super-container">
+
+    <p *ngIf="emptyResponse">Seems like there's nothing in here.</p>
+
+<div *ngIf="!emptyResponse" class="container">
+
+    <div class="history-list-container">
+
+        <div (click)="selectList($event,item)" *ngFor="let item of requestArray" class="history-item">
+            <span class="consumer-name">{{item.consumerName}}</span>
+            <span class="history-date">{{item.dateOfGeneration.toDateString()}}</span>
+            <span *ngIf="item.accepted&&item.rejected" class="history-status-accepted">Completed</span>
+            <span *ngIf="item.rejected&&!item.accepted" class="history-status-rejected">Rejected</span>
+        </div>
+
+    </div>
+
+    <div class="history-display">
+
+     <div class="display-area">
+        <div (click)="goBack()" class="back"> < Back </div>
+
+        <div class="list-area">
+            <h4>{{selectedList.listName}}</h4>
+
+            <div *ngFor="let item of selectedList.listItems; let i=index" class="list-item">
+                <span class="text">{{item}}</span>
+                <span *ngIf="selectedList.accepted&&selectedList.rejected" class="price">Rs. {{selectedList.individualCost[i]}}</span>
+            </div>
+        </div>
+
+        <h3>{{selectedList.consumerName}}</h3>
+        <p *ngIf="selectedList.rejected&&selectedList.accepted">{{selectedList.consumerAddress}}</p>
+
+        <a *ngIf="selectedList.rejected&&selectedList.accepted" href="tel:{{selectedList.consumerPhone}}"><img src="../../../assets/call.svg" alt="Call"> Call Now</a>
+
+        <div class="tag-container">
+
+            <span *ngIf="selectedList.rejected&&selectedList.accepted" class="price-tag">INR {{selectedList.totalCost}}</span>
+            <div *ngIf="selectedList.accepted&&selectedList.rejected" class="status-container-1">
+                <span class="status-tag-delivered">Delivered <img src="../../../assets/tick.svg" alt="Done"></span>
+            </div>
+            <div *ngIf="selectedList.rejected&&!selectedList.accepted" class="status-container-2">
+                
+                <span class="status-tag-rejected">Rejected <img src="../../../assets/cross.svg" alt="Cross"></span>
+            </div>
+
+        </div>
+
+     </div>
+
+    </div>
+
+
+
+</div>
+
+</div>

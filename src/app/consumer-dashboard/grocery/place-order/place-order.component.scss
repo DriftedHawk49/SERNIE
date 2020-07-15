@@ -1,0 +1,123 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+
+.container{
+    box-shadow: 0px 3px 6px $vlgrey;
+    padding: 30px;
+    height: 606px;
+    border-radius: 10px;
+    overflow-y: auto;
+    h1,h3{
+        margin: 0px;
+        font-weight: 400;   
+    }
+
+    h1{
+        color: $dBlue;
+        font-size: 35px;
+    }
+
+    h3{
+        color: $lBlue;
+        font-size: 20px;
+    }
+
+    .heading-container{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        .heading{
+            font-weight: bold;
+            color: $vdBlue;
+            letter-spacing: 1px;
+            &:nth-of-type(2){
+                float: right;
+            }
+        }
+    }
+
+    .shop-container{
+        
+        .shop{
+            height: 40px;
+            display: block;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: $vlBlue;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            .shop-name, .shop-distance{
+
+            }
+
+            .shop-distance{
+                float: right;
+            }
+
+        }
+    }
+}
+
+
+@media only screen and (max-width:767px){
+
+    .container{
+        padding: 15px;
+        border-radius: 5px;
+        h1,h3{
+            margin: 0px;
+            font-weight: 400;   
+        }
+    
+        h1{
+          
+            font-size: 20px;
+        }
+    
+        h3{
+            
+            font-size: 15px;
+        }
+    
+        .heading-container{
+            margin-top: 20px;
+            padding: 0px 0px;
+            margin-bottom: 10px;
+            .heading{
+                font-size: 12px;
+               
+            }
+        }
+    
+        .shop-container{
+            
+            .shop{
+                height: 30px;
+                padding: 8px 10px;
+                font-size: 12px;
+                border-radius: 2px;
+                margin-bottom: 5px;
+                .shop-name, .shop-distance{
+    
+                }
+    
+                .shop-distance{
+                   
+                }
+    
+            }
+        }
+    }
+    
+
+}

@@ -1,0 +1,59 @@
+<div class="main-container">
+
+    <div class="image-container">
+
+        <img src="../../assets/boy.svg" alt="Profile Picture" class="profile">
+
+        <label for="profile-picture-changer">Change Profile Picture</label>
+        <input id="profile-picture-changer" hidden type="file">
+
+    </div>
+
+    <div class="rest-container">
+        <h1>Welcome {{name}}</h1>
+
+        <div class="email-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Change Email</mat-label>
+                <input [(ngModel)]="email" matInput type="text">
+                <mat-error> Enter Email in correct format</mat-error>
+              </mat-form-field>
+
+            <button (click)="changeEmail()" matRipple class="change-email-btn">Change</button>
+        </div>
+
+        <div class="phone-container">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Change Phone</mat-label>
+                <input [(ngModel)]="number" matInput  type="number">
+              </mat-form-field>
+
+              <button (click)="changePhone()" matRipple class="change-phone-btn">Change</button>
+        </div>
+
+        <div class="pass-container-main">
+        <div class="pass-container">
+            <label>Change Password</label>
+            <div class="pass-form-container">
+                <mat-form-field appearance="outline">
+                    <mat-label>Old Password</mat-label>
+                    <input [(ngModel)]="oldPassword" matInput type="password">
+                  </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>New Password</mat-label>
+                    <input matInput [(ngModel)]="newPassword" type="password">
+                  </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Retype New Password</mat-label>
+                    <input matInput [(ngModel)]="newRePassword" type="password">
+                  </mat-form-field>
+            </div>
+        </div>
+            <button matRipple (click)="changePassword()" class="change-pass-btn">Save</button>
+        </div>
+
+        <button matRipple (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+
+</div>

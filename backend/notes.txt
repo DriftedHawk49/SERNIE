@@ -1,0 +1,4 @@
+custom hash string = user.id + user.email + user.name
+
+identity : Consumer & Service_Provider;
+

@@ -1,0 +1,215 @@
+
+<div class="container">
+
+    <div class="status-toggler box">
+
+        <label class="switch">
+            <input [checked]="status" (click)="changeStatus()" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <div *ngIf="status" class="text-container">
+            <h1>You're Online</h1>
+            <h2>You can be found when people search for you, in your area.</h2>
+        </div>
+        <div *ngIf="!status" class="text-container">
+            <h1>You're Offline</h1>
+            <h2>You can rest now. People will not disturb you for services now.</h2>
+        </div>
+
+    </div>
+
+
+    <button matRipple class="refresh" (click)="fetchRequests()">Refresh</button>
+
+
+
+    <h3 *ngIf="loading&&!error" style="font-weight: 400;">Requests are loading Please Wait...</h3>
+    <h3 *ngIf="!loading&&error" style="font-weight: 400;">Error Occurred. Please Try Later.</h3>
+    <h3 *ngIf="!loading&&noResult" style="font-weight: 400;">No Requests Found ! Let people place requests for you. </h3>
+
+    <!-- *ngIf = "!loading" -->
+    <div *ngIf="!loading"  class="main-request-container">
+
+            <mat-accordion>  
+                <mat-expansion-panel class="special">
+
+                        <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Your Appointments
+                                </mat-panel-title>
+
+                                <mat-panel-description>
+                                   
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+            
+                            
+                <div class="appointments-container">
+                        <div class="today">
+                            
+                            <h2>Today</h2>
+
+                            <h4 *ngIf="!appointmentsToday.length" style="font-weight: 400">No Requests at the moment</h4>
+
+                            <mat-accordion *ngIf="appointmentsToday.length">
+
+                                <mat-expansion-panel *ngFor="let appointment of appointmentsToday">
+
+                                    <mat-expansion-panel-header>
+
+                                        <mat-panel-title>
+                                            {{(appointment.nameOfConsumer.split(" "))[0]}}
+                                        </mat-panel-title>
+
+                                        <mat-panel-description>
+                                            {{appointment.dateScheduled}}
+                                        </mat-panel-description>
+
+                                    </mat-expansion-panel-header>
+
+                                    <div class="info-container">
+
+                                        <p class="address">{{appointment.address}}</p>
+
+                                        <h5>Call them before you go.</h5>
+
+                                        <a href="tel:{{appointment.phone}}"> <img src="../../assets/call.svg" alt="call-icon"> Call now</a>
+
+                                        <mat-checkbox (click)="markForCompletion(appointment.id)" color="primary">Mark as Done</mat-checkbox> 
+
+                                    </div>
+
+
+                                </mat-expansion-panel>
+
+
+                            </mat-accordion>
+
+                        </div>
+
+                        <div class="future">
+
+                            <h2>Future</h2>
+
+                            <h4 *ngIf="!appointmentsFuture.length" style="font-weight: 400">No Requests at the moment</h4>
+
+                            <mat-accordion *ngIf="appointmentsFuture.length">
+
+                                    <mat-expansion-panel *ngFor="let appointment of appointmentsFuture">
+    
+                                        <mat-expansion-panel-header>
+    
+                                            <mat-panel-title>
+                                                {{(appointment.nameOfConsumer.split(" "))[0]}}
+                                            </mat-panel-title>
+    
+                                            <mat-panel-description>
+                                                {{appointment.dateScheduled}}
+                                            </mat-panel-description>
+    
+                                        </mat-expansion-panel-header>
+    
+                                        <div class="info-container">
+    
+                                            <p class="address">{{appointment.address}}</p>
+    
+                                            <h5>You can call them to ask to visit today.</h5>
+    
+                                            <a href="tel:{{appointment.phone}}"> <img src="../../assets/call.svg" alt="call-icon"> Call now</a>
+
+                                            <mat-checkbox (click)="markForCompletion(appointment.id)" color="primary">Mark as Done</mat-checkbox> <!-- insert logic for changing markDoneSP, submitting to server and refetching to server for all new requests. -->
+    
+                                        </div>
+    
+    
+                                    </mat-expansion-panel>
+    
+    
+                                </mat-accordion>
+
+
+                        </div>
+
+                    </div>
+                            
+                   
+                </mat-expansion-panel>
+
+                <mat-expansion-panel >
+
+                        <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    New Requests
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <h4 *ngIf="!newRequests.length" style="font-weight: 400;">No New Requests. Click on refresh to check for new requests.</h4>
+            
+                            <div *ngIf="newRequests.length" class="new-request-container">
+        
+                                    <div *ngFor="let request of newRequests" class="new-request">
+                                        <h2 class="name">{{(request.nameOfConsumer.split(" "))[0]}}</h2>
+                                        <h5 class="date">{{request.dateScheduled}}</h5>
+                                        
+                                        <div class="button-container">
+                                        <button matRipple (click)="acceptRequest(request.id)" class="accept">Accept <img src="../../assets/accept-white.svg" alt="accept"></button> <!-- Insert logic to accept the request and refetch requests -->
+                                        <!-- <button  matRipple class="delay">Delay <img src="../../assets/delay-white.svg" alt="delay"></button> -->
+                                        <button matRipple (click)="rejectRequest(request.id)" class="reject">Reject <img src="../../assets/reject-white.svg" alt="reject"></button> <!-- Insert logic to reject the request and refetch requests -->
+                                        </div>
+
+                                        <!-- DELAY REQUEST -->
+                                        <!-- <div class="choose-a-date">
+                                            <h3>Choose a Date</h3>
+                                            <div class="dates-container">
+                                                <div class="date"> <span class="numeric">11</span> <span class="day">Mon</span></div>
+                                            </div>
+                        
+                                            <button>Submit</button>
+                                        </div> -->
+                                    
+                                    </div>
+                        
+                                </div>
+
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    History
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+            
+                            
+                            <h4 *ngIf="!history.length" style="font-weight:400;">No requests here. They will appear when you accept or reject a request or a request exceeds its time limit and you don't accept it.</h4>
+
+                <div *ngIf="history.length" class="history-container">
+
+                    <div *ngFor="let request of history">
+                    
+                    <div [class.accepted]="request.accepted" [class.rejected]="request.rejected" class="history">
+                        <h2 class="name">{{(request.nameOfConsumer.split(" "))[0]}}</h2>
+                        <h5 class="date">{{request.dateScheduled}}</h5>
+
+                        <h3 *ngIf="request.accepted" class="accepted-status"><span>Accepted</span>  <img src="../../assets/accept.svg" alt="accept"></h3>
+                        <h3 *ngIf="request.rejected" class="rejected-status"> <span>Rejected</span>  <img src="../../assets/cross-blue.svg" alt="reject"> </h3>
+
+                        <div class="rating"><img src="{{ratingURL[request.rating-1]}}" alt="rating"></div>
+
+                    </div>
+                    </div>
+
+                    </div>
+                             
+                        </mat-expansion-panel>
+                
+            </mat-accordion>    
+                
+        </div>
+       
+
+
+   
+
+</div>

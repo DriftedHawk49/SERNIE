@@ -1,0 +1,99 @@
+
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+
+
+
+h1{
+    font-size: 75px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 400;
+    color: $dBlue;
+    margin-bottom: 20px;
+}
+
+.identification{
+    text-align: center;
+    margin-bottom: 30px;
+    img{
+        width: 35px;
+        vertical-align: top;
+        margin-right: 15px;
+    }
+
+    span{
+        color: $dBlue;
+        font-size: 30px;
+    }
+}
+
+
+
+// .user-image{
+//     width: 150px;
+//     height: 150px;
+//     margin: auto;
+//     margin-top: 40px;
+//     margin-bottom: 30px;
+//     text-align: center;
+//     border: 1px solid $dBlue;
+//     border-radius: 100px;
+//     cursor: pointer;
+
+//     input{
+//         margin-bottom: 40px;
+//     }
+
+//     label{
+//         color: $lgrey;
+//     }
+// }
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    h1{
+        font-size: 50px;
+    }
+
+    .identification{
+        text-align: center;
+        margin-bottom: 20px;
+        img{
+            width: 25px;
+        }
+    
+        span{
+            font-size: 20px;
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 767px){
+    h1{
+        font-size: 40px;
+    }
+
+    .identification{
+        text-align: center;
+        margin-bottom: 20px;
+        img{
+            width: 25px;
+        }
+    
+        span{
+            font-size: 20px;
+        }
+    }
+}
+
+

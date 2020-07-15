@@ -1,0 +1,20 @@
+<div id="place-order-component" class="container">
+
+    <h1>PLACE</h1>
+    <h3>YOUR ORDER</h3>
+
+    <div class="heading-container">
+        <span class="heading">Shop Name</span>
+        <span class="heading">Distance</span>
+    </div>
+    <p *ngIf="loading" >Loading...</p>
+    <div *ngIf="!loading" class="shop-container">
+        <a (click)="placeOrderWindow(i)" *ngFor="let item of realPayload; let i= index; trackBy:trackFn" class="shop">
+            <span  class="shop-name">{{item.shopName}}</span>
+            <span  class="shop-distance">{{item.distance}} m</span>
+        </a>
+    </div>
+
+
+
+</div>

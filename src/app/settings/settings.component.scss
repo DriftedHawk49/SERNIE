@@ -1,0 +1,354 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+
+.main-container{
+
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin: 50px 140px 0px 140px;
+    border-radius: 10px;
+    box-shadow:0px 0px 5px $vlgrey;
+    padding: 50px;
+
+    .image-container{
+        grid-column: span 3/auto;
+        // text-align: center;
+
+        img{
+           width: 200px;
+           border-radius: 200px;
+           border: 5px solid $dBlue;
+        }
+
+        label{
+            // text-align: center;
+            margin-left: 40px;
+            display: block;
+            color: $dBlue;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .rest-container{
+        grid-column: span 9/auto;
+
+        h1{
+            font-size: 60px;
+            font-weight: 400;
+            color: $dBlue;
+        }
+
+        mat-form-field{
+            width: 350px;
+        }
+
+        .change-email-btn, .change-phone-btn, .change-pass-btn{
+            font-size: 20px;
+            color: white;
+            background-color: $dBlue;
+            padding: 8px 37px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .email-container{
+
+            mat-form-field{
+                margin-right: 80px;
+            }
+
+            button{
+
+            }
+
+        }
+
+        .phone-container{
+
+            mat-form-field{
+                margin-right: 80px;
+            }
+
+            button{
+
+            }
+        }
+
+        .pass-container{
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            margin-top: 20px;
+            label{
+                color: $dBlue;
+                text-align: left;
+                grid-column: span 3/auto;
+                margin-top: 10px;
+            }
+
+            .pass-form-container{
+                grid-column: span 9/auto;                
+                mat-form-field {
+                    display: block;
+                    width: 250px;
+                }
+                
+            }
+
+            
+
+        }
+
+        .pass-container-main{
+            text-align: right;
+            width: 600px;
+
+            button{
+                
+            }
+        }
+
+        .logout-btn{
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            background-color: $vdBlue;
+            padding: 8px 37px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+
+}
+
+// Tabelt
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    .main-container{
+
+        display: block;
+        padding: 30px;
+        margin: 40px 55px 0px 55px;
+        text-align: center;
+    
+        .image-container{
+            // text-align: center;
+
+            img{
+                width: 150px;
+                border: 3px solid $dBlue;
+             }
+    
+            label{
+                // text-align: center;
+                margin-left: 0px;
+                
+            }
+        }
+    
+        .rest-container{
+           
+    
+            h1{
+                font-size: 50px;
+            }
+    
+            mat-form-field{
+            }
+    
+            .change-email-btn, .change-phone-btn, .change-pass-btn{
+                
+            }
+    
+            .email-container{
+    
+                mat-form-field{
+                    margin-right: 50px;
+                }
+    
+                button{
+    
+                }
+    
+            }
+    
+            .phone-container{
+    
+                mat-form-field{
+                    margin-right: 50px;
+                }
+    
+                button{
+    
+                }
+            }
+    
+            .pass-container{
+                display: block;
+                // margin-bottom: 20px;
+                margin-top: 0px;
+                label{
+                    color: $dBlue;
+                    text-align: left;
+                    margin-top: 10px;
+                }
+    
+                .pass-form-container{               
+                    mat-form-field {
+                        display: inline-block;
+                        width: 350px;
+                    }
+                    
+                }
+    
+                
+    
+            }
+    
+            .pass-container-main{
+                text-align: center;
+                margin: auto;
+                padding: 5px;
+    
+                button{
+                    
+                }
+            }
+    
+            .logout-btn{
+                margin-top: 30px;
+            }
+        }
+    
+    }
+
+}
+
+
+
+// Mobile
+@media only screen and (max-width: 767px){
+
+    .main-container{
+
+        display: block;
+        padding: 30px;
+        margin: 30px 30px 0px 30px;
+        text-align: center;
+    
+        .image-container{
+            // text-align: center;
+
+            img{
+                width: 70px;
+                border: 1px solid $dBlue;
+             }
+    
+            label{
+                // text-align: center;
+                font-size: 10px;
+                margin-left: 0px;
+                
+            }
+        }
+    
+        .rest-container{
+           
+    
+            h1{
+                font-size: 25px;
+            }
+    
+            mat-form-field{
+                width: 100%;
+                font-size: 15px;
+            }
+    
+            .change-email-btn, .change-phone-btn, .change-pass-btn{
+                font-size: 15px;
+            padding: 4px 16px;
+            border-radius: 2px;
+            
+            }
+    
+            .email-container{
+                text-align: right;
+                margin-bottom: 10px;
+                mat-form-field{
+                    margin-right: 0px;
+                    text-align: left;
+                }
+    
+                button{
+    
+                }
+    
+            }
+    
+            .phone-container{
+                text-align: right;
+                margin-bottom: 10px;
+                mat-form-field{
+                    margin-right: 0px;
+                    text-align: left;
+                }
+    
+                button{
+    
+                }
+            }
+    
+            .pass-container{
+                display: block;
+                // margin-bottom: 20px;
+                margin-top: 0px;
+                label{
+                    color: $dBlue;
+                    font-size: 15px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+    
+                .pass-form-container{               
+                    mat-form-field {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                    
+                }
+    
+                
+    
+            }
+    
+            .pass-container-main{
+                text-align: left;
+                width: 100%;
+                text-align: center;
+                margin: auto;
+                padding: 5px;
+    
+                button{
+                    font-size: 15px;
+                }
+            }
+    
+            .logout-btn{
+                margin-top: 30px;
+            }
+        }
+    
+    }
+
+    
+}

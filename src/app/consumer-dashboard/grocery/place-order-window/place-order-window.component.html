@@ -1,0 +1,40 @@
+<div class="container">
+    <a routerLink="grocery" class="navigator">
+        <img src="../../../../assets/left-chevron-blue.svg" alt="Back">
+        PLACE ORDER
+    </a>
+
+    <div class="grid-container">
+        <div *ngIf="isListSelectorSelected" class="info-show">
+            <h2 class="shop-name">{{shopDetails.shopName}}</h2>
+            <p class="shop-address">{{shopDetails.shopAddress}}</p>
+            <div class="upload-container">
+                
+                <span>Select a List : </span>
+            </div>
+        
+            <div class="list-container">
+                <span (click)="selectListForOrder($event,item)" *ngFor="let item of userLists" class="list">{{item.listName}}</span>
+            </div>
+        </div>
+        <div *ngIf="isListSelected||isPictureSelected" class="list-show">
+
+            
+            <div *ngIf="isListSelected" class="full-list">
+            <h2 class="list-name">{{selectedList.listName}}</h2>
+                <span *ngFor="let item of selectedList.listItems" class="list-item">{{item}}</span>
+            </div>
+
+            <div *ngIf="isPictureSelected" class="picture-list">
+                <img class="list-photo" alt="List Image">
+            </div>
+
+            
+            <button (click)="placeOrder()" class="place-order">Place Order</button>
+            <a class="reset-btn" (click)="resetEverything()">Reset</a>
+
+        </div>
+
+    </div>
+
+</div>

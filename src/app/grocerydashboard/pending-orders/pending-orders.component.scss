@@ -1,0 +1,532 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+$dYellow: #ACA700;
+$Orange: #F96F1A;
+$vlOrange: #FFF0E7;
+$vdOrange: #D34F00;
+
+
+.super-container{
+
+    box-shadow: 0px 0px 6px $vlgrey;
+    padding: 1px 1px 30px 1px;
+
+    p{
+        margin-left: 10px;
+    }
+    
+
+    .container{
+
+        
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        
+    
+        .list-container{
+            grid-column: span 3/auto;
+            margin: 0px;
+            height: 650px;
+            overflow: auto;
+    
+            
+    
+            .list-item{
+                margin: 0px 10px 10px 25px;
+                box-shadow: 0px 0px 6px $vlgrey;
+                padding: 11px 15px;
+                color: $dBlue;
+                border-radius: 5px;
+                cursor: pointer;
+                span{
+                    font-size: 15px;
+                }
+                &:nth-of-type(1){
+                    margin-top: 30px;
+                }
+            }
+    
+            .selected{
+                background: rgb(0,96,255);
+                background: linear-gradient(90deg, rgba(0,96,255,1) 0%, rgba(0,181,255,1) 100%);
+                color: white;
+            }
+        }
+    
+        .details-container{
+            margin: 30px 25px 0px 10px;
+            grid-column: span 9/auto;
+            border: 2px solid $dBlue;
+            border-radius: 5px;
+            padding-bottom: 10px;
+            display: none;
+    
+            .back{
+                padding: 6px 15px;
+                background-color: $dBlue;
+                border-radius: 2px 2px 0px 0px;
+                cursor: pointer;
+                text-align: center;
+                color: white;
+                display: none;
+                
+            }
+    
+            .list-display{
+                padding: 15px;
+                margin: 10px;
+                height: 500px;
+                background-color: $vlyellow;
+                h4{
+                    margin: 0px 0px 20px 0px;
+                    color: rgb(36, 36, 36);
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+    
+                .list-item{
+                    margin-top: 10px;
+                    border-bottom: 1px solid rgb(77, 77, 77);
+                    .item-text{
+    
+                    }
+    
+                    .item-price{
+                        float: right;
+                        width: 70px;
+                        text-align: right;
+                        padding: 5px 5px;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: $dYellow;
+                        color: white;
+                    }
+    
+                }
+    
+                .btn-container{
+    
+                    margin-top: 20px;
+    
+                    .reset-btn,.total-btn{
+                        padding: 5px 10px;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        display: inline-block;
+                    }
+    
+                    .reset-btn{
+                        background-color: $dRed;
+                        color: white;
+                    }
+    
+                    .total-btn{
+                        float: right;
+                        background-color: $dGreen;
+                        color: white;
+                    }
+    
+                }
+    
+            }
+    
+            h2{
+                margin: 20px 10px 2px 10px;
+                color: $vdBlue;
+                font-size: 18px;
+                font-weight: 500;
+            }
+    
+            p{
+                margin: 0px 10px 0px 10px;
+                color: $dBlue;
+                font-size: 12px;
+            }
+    
+            a{
+                display: block;
+                background-color: $dBlue;
+                padding: 8px 10px;
+                font-size: 14px;
+                color: white;
+                border-radius: 2px;
+                width: 110px;
+                margin: 10px 10px;
+                text-decoration: none;
+    
+                img{
+                    vertical-align: middle;
+                    width: 20px;
+                }
+            }
+    
+            .total-amount{
+                display: inline-block;
+                margin-left: 10px;
+                font-size: 15px;
+                font-weight: 500;
+                color: $dBlue;
+                .amount{
+                    display: inline-block;
+                    padding: 10px 15px;
+                    background-color: $vlBlue;
+                    color: $dBlue;
+                    margin-left: 15px;
+                    border-radius: 5px;
+                }
+            }
+    
+            .deliver-btn{
+                float: right;
+                padding: 10px 15px;
+                margin-right: 10px;
+                border-radius: 5px;
+                background-color: $dGreen;
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+            }
+    
+    
+           
+            
+        }
+    
+    
+    }
+
+}
+
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+
+    .container{
+
+        
+    
+        .list-container{
+            grid-column: span 12/auto;
+
+            .list-item{
+                
+                span{
+                    
+                }
+                &:nth-of-type(1){
+                    
+                }
+            }
+    
+            .selected{
+                
+            }
+        }
+    
+        .details-container{
+            grid-column: span 12/auto;
+            .back{
+                display: block;
+            }
+    
+            .list-display{
+                
+                h4{
+                   
+                }
+    
+                .list-item{
+                   
+                    .item-text{
+    
+                    }
+    
+                    .item-price{
+                       
+                    }
+    
+                }
+    
+                .btn-container{
+    
+                   
+    
+                    .reset-btn,.total-btn{
+                        
+                    }
+    
+                    .reset-btn{
+                        
+                    }
+    
+                    .total-btn{
+                        
+                    }
+    
+                }
+    
+            }
+    
+            h2{
+                
+            }
+    
+            p{
+               
+            }
+    
+            a{
+               
+    
+                img{
+                    
+                }
+            }
+    
+            .total-amount{
+                
+                .amount{
+                    
+                }
+            }
+    
+            .deliver-btn{
+                
+            }
+    
+    
+           
+            
+        }
+    
+    
+    }
+
+
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    .container{
+
+        
+    
+        .list-container{
+            grid-column: span 4/auto;
+
+            .list-item{
+                
+                span{
+                    
+                }
+                &:nth-of-type(1){
+                    
+                }
+            }
+    
+            .selected{
+                
+            }
+        }
+    
+        .details-container{
+            grid-column: span 8/auto;
+            .back{
+                display: none;
+            }
+    
+            .list-display{
+                
+                h4{
+                   
+                }
+    
+                .list-item{
+                   
+                    .item-text{
+    
+                    }
+    
+                    .item-price{
+                       
+                    }
+    
+                }
+    
+                .btn-container{
+    
+                   
+    
+                    .reset-btn,.total-btn{
+                        
+                    }
+    
+                    .reset-btn{
+                        
+                    }
+    
+                    .total-btn{
+                        
+                    }
+    
+                }
+    
+            }
+    
+            h2{
+                
+            }
+    
+            p{
+               
+            }
+    
+            a{
+               
+    
+                img{
+                    
+                }
+            }
+    
+            .total-amount{
+                
+                .amount{
+                    
+                }
+            }
+    
+            .deliver-btn{
+                
+            }
+    
+    
+           
+            
+        }
+    
+    
+    }
+
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .container{
+
+        
+    
+        .list-container{
+            grid-column: span 12/auto;
+
+            .list-item{
+                margin-right: 25px;
+                span{
+                    
+                }
+                &:nth-of-type(1){
+                    
+                }
+            }
+    
+            .selected{
+                
+            }
+        }
+    
+        .details-container{
+            grid-column: span 12/auto;
+            margin: 10px;
+            .back{
+                display: block;
+            }
+    
+            .list-display{
+                
+                h4{
+                   font-size: 15px;
+                }
+    
+                .list-item{
+                   
+                    .item-text{
+                        font-size: 10px;
+                    }
+    
+                    .item-price{
+                       padding: 2px 10px;
+                       border-radius: 0px;
+                    }
+    
+                }
+    
+                .btn-container{
+    
+                   
+    
+                    .reset-btn,.total-btn{
+                        font-size: 15px;
+                    }
+    
+                    .reset-btn{
+                        
+                    }
+    
+                    .total-btn{
+                        
+                    }
+    
+                }
+    
+            }
+    
+            h2{
+                
+            }
+    
+            p{
+               
+            }
+    
+            a{
+               
+    
+                img{
+                    
+                }
+            }
+    
+            .total-amount{
+                
+                .amount{
+                    
+                }
+            }
+    
+            .deliver-btn{
+                
+            }
+    
+    
+           
+            
+        }
+    
+    
+    }
+
+
+}

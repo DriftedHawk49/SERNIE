@@ -1,0 +1,76 @@
+<form [formGroup]="consForm" (ngSubmit)="submitHandler()">
+
+    <div class="form-container" [hidden]="initialStep">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required  type="text">
+        <mat-error *ngIf="name.invalid"> Name is required (Minimum 3 letters) </mat-error>
+        
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phone" required  type="number">
+            <mat-error *ngIf="phone.invalid"> Please Enter 10 Digit Phone Number Only. </mat-error>
+    </mat-form-field>
+    
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required  type="email">
+      <mat-error *ngIf="email.invalid"> Enter Correct Email </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" required type="password">
+            <mat-error *ngIf="password.invalid"> This field is required (minimum length 6)</mat-error>
+        </mat-form-field>
+    <mat-form-field appearance="outline">
+            <mat-label> Retype Password</mat-label>
+            <input matInput formControlName="rePassword" required  type="password">
+            <mat-error *ngIf="rePassword.invalid"> This field is Required (minimum length 6)</mat-error>
+        </mat-form-field>
+
+    <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" required  type="text">
+            <mat-hint>Please Put in Full Address to locate you easily.</mat-hint>
+        </mat-form-field>
+     
+    <div class="zone-pin-container">
+
+            <mat-form-field class="zone" appearance="outline">
+                    <mat-label>Zone</mat-label>
+                    <mat-select formControlName="zone" required >
+                            <mat-option *ngFor="let zone of zones" [value]="zone">
+                                {{zone}}
+                            </mat-option>
+                          </mat-select>
+            <mat-hint>Zone Of Delhi You Live in</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Pincode</mat-label>
+            <input matInput #postalCode formControlName="pincode" required maxlength="6">
+            <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+        </mat-form-field>
+
+    </div>
+
+    </div>
+
+        <div class="map-container" [hidden]="!initialStep">
+
+            <h1>Location</h1>
+            <h3>Tell us where you live so that service provider can locate you while you contact them for services. You can locate yourself by clicking on the map and address will be shown for you to confirm.</h3>
+            <span class="selectedAddress"></span>
+                <div class="mapElement"></div>
+            
+        </div>
+
+    <button matRipple class="submit-btn" type="submit">Continue</button>
+
+</form>
+

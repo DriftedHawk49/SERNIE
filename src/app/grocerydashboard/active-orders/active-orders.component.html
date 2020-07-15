@@ -1,0 +1,35 @@
+
+<div class="super-container">
+<p *ngIf="emptyResponse"> Hey! Looks Like you have nothing here! </p>
+<div *ngIf="!emptyResponse">
+<div class="container">
+
+    <div class="list-container">
+
+        <div (click)="setDisplay($event,item)" *ngFor="let item of requestArray" class="list-item">
+            <span>{{item.consumerName}}</span>
+        </div>
+
+    </div>
+
+    <div class="details-container">
+        <span (click)="backToListSelect($event)" class="back">< Back</span>
+        <div class="list-display">
+            <h4>{{selectedList.listName}}</h4>
+            <span *ngFor="let item of selectedList.listItems">{{item}}</span>
+        </div>
+
+        <h2>{{selectedList.consumerName}}</h2>
+        <p>{{selectedList.consumerAddress}}</p>
+
+        <a href="tel:{{selectedList.consumerPhone}}"><img src="../../../assets/call.svg" alt="Call"> Call Now</a>
+
+        <div class="btn-container">
+            <button (click)="acceptOrders()" class="accept">Accept</button>
+            <button (click)="rejectOrders()" class="reject">Reject</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>

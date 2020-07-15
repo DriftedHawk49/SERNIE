@@ -1,0 +1,142 @@
+
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+
+.container{
+    width: 500px;
+    margin: 100px auto;
+}
+
+h2{
+    text-align: center;
+    font-size: 60px;
+    color: $dBlue;
+    font-weight: 400;
+    margin: 0px auto 40px auto;
+}
+
+.container-card{
+    padding: 50px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.16);
+    border-radius: 5px;
+}
+
+mat-form-field{
+    display: block;
+}
+
+.forgot{
+    display: block;
+    font-size: 12px;
+    color: $dBlue;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        color: $lBlue;
+    }
+}
+
+.login-button{
+    display: block;
+    text-align: center;
+    margin: 50px auto 10px auto;
+    width: 150px;
+    height: 60px;
+    background-color: $dBlue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.register{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: $lBlue;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        color: $dBlue;
+    }
+}
+
+mat-radio-group{
+    &::before{
+        content :"*You are :";
+        margin-right: 20px;
+        font-size: 15px;
+        font-weight: 500;
+        color: $dBlue;
+    }
+
+    mat-radio-button{
+        margin-right: 20px;
+        margin-bottom: 20px;;
+        
+    }
+}
+
+mat-checkbox{
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 767px){
+    .container{
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .container-card{
+        padding: 20px;
+    }
+
+    h2{
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .login-button{
+        width: 100px;
+        height: 40px;
+        margin-top: 30px;
+        font-size: 17px;
+    }
+
+    .forgot, .register{
+        font-size: 10px;
+    }
+
+    mat-radio-group{
+        font-size: 15px;
+        margin-bottom: 20px;
+        &::before{
+            display: block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    
+        mat-radio-button{
+            margin-right: 10px;
+            
+        }
+    }
+    
+    mat-checkbox{
+        display: block;
+    }
+    
+}

@@ -1,0 +1,109 @@
+
+<div class="main-container">
+
+    <div *ngIf="!serviceFinder" class="service-selector">
+            <h1>Choose A Service</h1>
+
+            <div class="tile-container" >
+                    <div matRipple (click)="initiateServiceFinder(service.name)" *ngFor="let service of services" class="tile"><img src={{service.img_src}} alt=""><span>{{service.name}}</span></div>
+            </div>
+
+            <div class="sernie-grocery-container">
+                <a routerLink="grocery">
+                    <div class="img-container">
+                        <img src="../../../assets/shopping-cart.svg" alt="Shopping Cart">
+                    </div>
+
+                    <div class="text-container">
+                        <h4>SERNIE - GROCERY</h4>
+                        <p>Order from your nearby grocery store and get them delivered to your home</p>
+                    </div>
+                </a>
+            </div>
+    </div>
+
+    <div *ngIf="serviceFinder" class="serviceProviders">
+
+        <h1><img (click)="endServiceFinder()" class="back-btn" src="../../../assets/back.svg" alt="go back"> &nbsp;&nbsp; {{selectedService}}s in your area </h1>
+
+        <h3 style="font-weight: 400;font-size: 15px;" *ngIf="loading">Please Wait, We're Loading Results!...</h3>
+
+        <mat-accordion *ngIf="!loading">
+            <mat-expansion-panel *ngFor="let sp of serviceProviders">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                            <img src="../../../assets/boy.svg" alt="Boy "> <span>{{sp.name}}</span> 
+                    </mat-panel-title> 
+                    <mat-panel-description>
+                        <img src="../../../assets/threestar.svg" alt="three star rating">
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+
+                
+                <div class="spProfile">
+                    <div class="upperPart">
+                            <img src="../../../assets/boy.svg" alt="profile-photo">
+                            <div class="nameDetails">
+                            <h3>{{sp.name}}</h3>
+                            <h5>{{selectedService}}</h5>
+                            </div>
+                    </div>
+                    <div class="logistics">
+                            <p class="address">Address : <span>{{sp.address}}</span></p>
+                            <p class="zone">Service in : <span>{{sp.zone}}</span></p>
+            
+                            <button matRipple (click)="mapService.animateMarker(sp.marker)" class="locate"> Locate </button>
+                    </div>
+                    <div class="button-container">
+                            <button matRipple class="call"><a href="tel:{{sp.phone}}"><img src="../../../assets/call.svg" alt="Call">Call</a></button>
+                            <button matRipple (click)="showAppointmentWindow(sp)" class="appoint"> <img src="../../../assets/book.svg" alt="Book an appointment"> Schedule </button>
+                    </div>
+                </div>
+                
+            </mat-expansion-panel>
+                
+
+        </mat-accordion>
+
+    </div>
+</div> 
+
+
+
+<!-- Appointment Window - Use Instance by declaring # in tag -->
+
+
+<div *ngIf="appointmentSelector" class="appointmentWindow">
+
+    <div class="overlay">
+        <span (click)="appointmentSelector=false" class="cross-btn">&times;</span>
+    
+        <div class="container">
+            <h1>Appointment</h1>
+            <h4>with : {{request.nameOfSP}}</h4>
+    
+            <div class="date-selector">
+                <h4>
+                    Choose Date.
+                </h4>
+    
+                <div class="dates-container">
+                <div matRipple (click)="scheduleAppointment(d)" class="date-tile" *ngFor="let d of dates">
+                    <span class="date-number">{{d.getDate()}}</span>
+                    <span class="day">{{days[d.getDay()]}}</span>
+                </div>
+                </div>    
+                
+            </div>
+    
+    
+    
+        </div>
+    
+    
+    </div>
+    
+
+</div>
+

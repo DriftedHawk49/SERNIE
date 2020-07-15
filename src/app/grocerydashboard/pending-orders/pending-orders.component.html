@@ -1,0 +1,48 @@
+
+<div class="super-container">
+
+<p *ngIf="emptyResponse">Seems like there's nothing in here.</p>
+
+<div *ngIf="!emptyResponse" class="container">
+
+    <div class="list-container">
+
+        <div (click)="setDisplay($event,item)" *ngFor="let item of requestArray" class="list-item">
+            <span>{{item.consumerName}}</span>
+        </div>
+
+    </div>
+
+    <div class="details-container">
+        <span (click)="backToListSelect($event)" class="back">< Back</span>
+        <div class="list-display">
+            <h4>{{selectedList.listName}}</h4>
+            
+            <div *ngIf="expression" class="list-item-container">
+                <div *ngFor="let item of selectedList.listItems; let i = index;" class="list-item">
+                    <span class="item-text">{{item}}</span>
+                    <input type="number" placeholder="Cost INR" (change)="changePrice($event,i)" class="item-price" >
+                </div>
+
+                <div class="btn-container">
+                    <span (click)="resetPrice()" class="reset-btn">Reset All Fields</span>
+                    <span (click)="total()" class="total-btn">Total</span>
+                </div>
+                
+            </div>
+
+        </div>
+        
+
+        <h2>{{selectedList.consumerName}}</h2>
+        <p>{{selectedList.consumerAddress}}</p>
+
+        <a [href]="'tel:'+selectedList.consumerPhone"><img src="../../../assets/call.svg" alt="Call"> Call Now</a>
+
+        <span class="total-amount">INR <span class="amount">{{selectedList.totalCost}}</span></span>
+
+        <span (click)="sendForDelivery()" class="deliver-btn">Deliver ></span>
+        
+    </div>
+</div>
+</div>

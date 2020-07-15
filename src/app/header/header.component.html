@@ -1,0 +1,7 @@
+<header>
+    <img class="logo" (click)="conditionalRouting()" src="../../assets/logo.png" alt="Sernie Logo">
+    <div>
+        <a *ngIf="!isLoggedIn" class="login" routerLink="login">LOGIN</a>
+        <a *ngIf="isLoggedIn" routerLink="settings" class="profile"><img src="../../assets/boy.svg" alt="Profile Picture"><span>{{name}}</span></a>
+    </div>
+</header>

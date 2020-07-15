@@ -1,0 +1,225 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+
+.dummyText{
+    color: $lgrey;
+}
+
+.container{
+    box-shadow: 0px 3px 6px $vlgrey;
+    border-radius: 10px;
+    padding: 30px;
+
+    h1, h3{
+        margin: 0px;
+        font-weight: 400;
+    }
+
+    h1{
+        color: $dBlue;
+        font-size: 35px;
+    }
+
+    h3{
+        color: $lBlue;
+        font-size: 20px;
+    }
+
+    .entry-field{
+        margin-top: 30px;
+        input{
+            color: $vdBlue;
+            width: 80%;
+            margin-right: 14px;
+            height: 40px;
+            background-color: $vlBlue;
+            border: none;
+            border-radius: 3px;
+            font-size: 20px;
+            padding: 8px 10px;
+
+        }
+
+        input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #97E0FE;
+            opacity: 1; /* Firefox */
+          }
+
+        img{
+            vertical-align: middle;
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    .list-container{
+        width: 100%;
+        background-color: $vlyellow;
+        padding: 12px;
+        height: 250px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        overflow-y: scroll;
+        .list{
+            padding-bottom: 4px;
+            border-bottom: 1px solid $vlgrey;
+            margin-bottom: 3px;
+            span{
+                font-size: 15px;
+            }
+
+            img{
+                float: right;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .save-container{
+        border: 2px solid $dGreen;
+        border-radius: 5px;
+        padding: 8px 10px;
+
+        input{  
+            background-color: $lGreen;
+            height: 40px;
+            padding: 8px 10px;
+            font-size: 20px;
+            color: $vdBlue;
+            width: 63%;
+            border: none;
+            border-radius: 3px;
+        }
+
+        input::placeholder{
+            color: #9DD9A5;
+            opacity: 1;
+        }
+
+        a{
+            background-color: $Green;
+            color: white;
+            float: right;
+            font-size: 22px;
+            padding: 7px 26px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+
+    .check-list-btn{
+        border-radius: 5px;
+        background-color: $vdBlue;
+        color: white;
+        padding: 11px 10px;
+        cursor: pointer;
+        margin-top: 30px;
+        display: block;
+        width: 150px;
+        text-decoration: none;
+    }
+
+}
+
+
+@media only screen and (max-width:767px){
+    .container{
+        border-radius: 5px;
+        padding: 15px;
+    
+        h1, h3{
+           
+        }
+    
+        h1{
+            
+            font-size: 20px;
+        }
+    
+        h3{
+            
+            font-size: 15px;
+        }
+    
+        .entry-field{
+            margin-top: 30px;
+            input{
+                width: 80%;
+                margin-right: 0px;
+                height: 30px;
+                border-radius: 2px;
+                font-size: 15px;
+                padding: 6px 10px;
+    
+            }
+    
+            input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #97E0FE;
+                opacity: 1; /* Firefox */
+              }
+    
+            img{
+                height: 30px;
+                vertical-align: middle;
+                float: right;
+                cursor: pointer;
+            }
+        }
+    
+        .list-container{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            .list{
+                
+                span{
+                    font-size: 12px;
+                }
+    
+                img{
+                   
+                }
+            }
+        }
+    
+        .save-container{
+            border: 2px solid $dGreen;
+            border-radius: 5px;
+            padding: 5px 5px;
+    
+            input{  
+                background-color: $lGreen;
+                height: 30px;
+                padding: 6px 10px;
+                font-size: 15px;
+                color: $vdBlue;
+                width: 65%;
+                border-radius: 2px;
+            }
+    
+            input::placeholder{
+              
+            }
+    
+            a{
+                font-size: 15px;
+                padding: 6px 16px;
+                border-radius: 2px;
+            }
+        }
+    
+        .check-list-btn{
+            
+        }
+    
+    }
+}

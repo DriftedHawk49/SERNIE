@@ -1,0 +1,591 @@
+$lBlue : #00B5FF;
+$dBlue : #0060FF;
+$lGreen : #E4FFE7;
+$dGreen : #00C81B;
+$lRed : #FFEBEB;
+$dRed : #F62424;
+$vdBlue : #00296E;
+$lgrey : #BEBEBE;
+$vlgrey : #E2E2E2;
+$vlBlue: #F3F9FF;
+$vlyellow: #FFFEE9;
+$Green: #0AE127;
+$Yellow: #E1DA0A;
+
+
+
+.currentlySelected{
+background: rgb(0,96,255);
+background: linear-gradient(90deg, rgba(0,96,255,1) 0%, rgba(0,181,255,1) 100%);
+color: white !important;
+}
+
+.initial{
+    font-size: 20px;
+    color: $dBlue;
+    margin-top: 20px;
+}
+
+
+.container{
+
+    margin: 50px 140px 30px 140px;
+
+    .back{
+        text-decoration: none;
+        color: $vdBlue;
+        font-weight: 500;
+        font-size: 30px;
+
+        img{
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+    }
+
+    .mini-back{
+        display: none;
+        font-size: 25px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-bottom: 30px;
+
+        img{
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+
+    .grid-container{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .listSelector{
+            height: 500px;
+            overflow: auto;
+            padding: 0px 5px;
+
+           .listItem{     
+                padding: 10px 15px;
+                color: $dBlue;
+                box-shadow: 0px 0px 6px $lgrey;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                width: 300px;
+                cursor: pointer;
+                .item-name{
+                   
+                }
+
+                .date{
+                    float: right;
+                }
+            }
+        }
+
+        .listDisplayContainer{
+            .listDisplay{
+                border-radius: 5px;
+                background-color: $vlyellow;
+                padding: 15px 25px;
+                width: 350px;
+                height: 500px;
+                overflow: auto;
+    
+                h4{
+                    color: $vdBlue;
+                    margin: 0px;
+                    font-weight: 400;
+                    font-size: 25px;
+                    margin-bottom: 10px;
+                }
+    
+                .listDisplayContainer{
+                    border-bottom: 1px solid darkgray;
+                    margin-top: 10px;
+                    span{
+                        color: rgb(105, 105, 105);
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            button{
+                display: none;
+                font-size: 20px;
+                padding: 5px 15px;
+                background-color: $Yellow;
+                color: white;
+                border-radius: 0px 0px 3px 3px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                text-align: center;
+
+            }
+
+        }
+
+
+        .listEdit{
+            padding: 25px 30px;
+            box-shadow: 0px 0px 6px lightgray;
+            border-radius: 5px;
+             
+            .ListNameEdit{
+                background-color: $vlBlue;
+                border: none;
+                height: 40px;
+                padding: 5px 15px;
+                font-size: 25px;
+                color: $vdBlue;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+
+            .enter-new-element{
+                margin-bottom: 20px;
+                .newItem{
+                    border: 2px solid $Yellow;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    padding: 5px 10px;
+                }
+                img{
+                    float: right;
+                    cursor: pointer;
+                }
+
+                .disabled{
+                    cursor: not-allowed!important;
+                }
+            }
+
+
+            .items-container{
+                height: 275px;
+                overflow: auto;
+                margin-bottom: 20px;
+            }
+
+            .list-edit-item{
+                margin-bottom: 10px;
+                input{
+                    padding: 8px 15px;
+                    font-size: 18px;
+                    color: $vdBlue;
+                    background-color: $vlyellow;
+                    border: none;
+                    border-radius: 5px;
+                    width: 90%;
+                }
+
+                img{
+                    vertical-align: middle;
+                    width: 25px;
+                    float: right;
+                    cursor: pointer;
+                }
+
+                .disabled{
+                    cursor: not-allowed!important;
+                }
+            }
+
+            .btn-container{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .btn{
+                padding: 6px 0px;
+                color: white;
+                font-size: 15px;
+                border-radius: 3px;
+                text-align: center;
+                width: 100px;
+                cursor: pointer;
+            }
+
+            .save-btn{
+                background-color: $dGreen;
+                padding-top: 15px;
+            }
+
+            .copy-btn{
+                background-color: darkgoldenrod;
+            }
+
+            .delete-btn{
+               padding-top: 15px;
+                background-color: $dRed;
+            }
+
+            .disable-btn{
+                background-color: $vlgrey;
+                color: darkgray;
+                padding-top: 15px;
+                cursor: not-allowed;
+                
+            }
+
+
+        }
+
+    }
+
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px){
+
+    .container{
+    
+        .back{
+            
+            img{
+                
+            }
+        }
+
+        .mini-back{
+            
+        }
+    
+        .grid-container{
+           
+    
+            .listSelector{
+                
+    
+               .listItem{     
+                    
+                    .item-name{
+                       
+                    }
+    
+                    .date{
+                        
+                    }
+                }
+            }
+            
+            .listDisplayContainer{
+                display: block;
+                .listDisplay{
+                    height: 450px;
+                    h4{
+                       
+                    }
+        
+                    .listDisplayContainer{
+                       
+                        span{
+                            
+                        }
+                    }
+                }
+
+                button{
+                    display: block;
+                }
+            }
+            
+    
+            .listEdit{
+                display: none;
+                 
+                .ListNameEdit{
+                    
+                }
+    
+                .enter-new-element{
+                   
+                    .newItem{
+                        
+                    }
+                    img{
+                        
+                    }
+                }
+    
+    
+                .items-container{
+                   
+                }
+    
+                .list-edit-item{
+                   
+                    input{
+                       
+                    }
+    
+                    img{
+                        
+                    }
+                }
+    
+                .save-btn,.delete-btn{
+                    
+                }
+    
+                .save-btn{
+                   
+                }
+    
+                .delete-btn{
+                   
+                }
+    
+    
+            }
+    
+        }
+    
+    
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px){
+
+    .container{
+
+        margin: 40px 54px;
+
+        .back{
+            
+            img{
+                
+            }
+        }
+
+        .mini-back{
+            
+        }
+    
+        .grid-container{
+           
+    
+            .listSelector{
+                
+    
+               .listItem{     
+                    width: 250px;
+                    padding: 8px 10px;
+                    .item-name{
+                       font-size: 15px;
+                    }
+    
+                    .date{
+                        font-size: 12px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+            
+            .listDisplayContainer{
+
+                .listDisplay{
+                    padding: 15px;
+                    height: 450px;
+                    h4{
+                       font-size: 20px;
+                    }
+        
+                    .listDisplayContainer{
+                       
+                        span{
+                            
+                        }
+                    }
+                }
+                button{
+                    display: block;
+                }
+            }
+
+    
+            .listEdit{
+                display: none;
+                height: 450px;
+                padding: 15px;
+                .ListNameEdit{
+                    font-size: 20px;
+                    width: 100%;
+                }
+    
+                .enter-new-element{
+                   
+                    .newItem{
+                        font-size: 18px;
+                        width: 75%;
+                    }
+                    img{
+                        width: 58px;
+                    }
+                }
+    
+    
+                .items-container{
+                   
+                }
+    
+                .list-edit-item{
+                    
+                    input{
+                       font-size: 15px;
+                    }
+    
+                    img{
+                        
+                    }
+                }
+    
+                .save-btn,.delete-btn{
+                    
+                }
+    
+                .save-btn{
+                   
+                }
+    
+                .delete-btn{
+                   
+                }
+    
+    
+            }
+    
+        }
+    
+    
+    }
+
+
+}
+
+@media only screen and (max-width: 767px){
+
+    .container{
+
+        margin: 30px;
+
+        .back{
+            
+            img{
+                
+            }
+        }
+
+        .mini-back{
+            
+        }
+    
+        .grid-container{
+           
+    
+            .listSelector{
+                
+    
+               .listItem{     
+                    width: 250px;
+                    padding: 8px 10px;
+                    .item-name{
+                       font-size: 15px;
+                    }
+    
+                    .date{
+                        font-size: 12px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+            
+            .listDisplayContainer{
+                display: none;
+                .listDisplay{
+                    padding: 15px;
+                    height: 450px;
+                    h4{
+                       font-size: 20px;
+                    }
+        
+                    .listDisplayContainer{
+                       
+                        span{
+                            
+                        }
+                    }
+                }
+                button{
+                    display: block;
+                }
+            }
+
+    
+            .listEdit{
+                display: none;
+                height: 450px;
+                padding: 10px;
+                .ListNameEdit{
+                    font-size: 18px;
+                    width: 100%;
+                    height: 30px;
+                    margin-bottom: 10px;
+                }
+    
+                .enter-new-element{
+                   
+                    .newItem{
+                        font-size: 15px;
+                        width: 75%;
+                        height: 30px;
+                    }
+                    img{
+                        width: 50px;
+                    }
+                }
+    
+    
+                .items-container{
+                   
+                }
+    
+                .list-edit-item{
+                    
+                    input{
+                       font-size: 12px;
+                       width: 85%;
+                       height: 30px;
+                    }
+    
+                    img{
+                        
+                    }
+                }
+    
+                .save-btn,.delete-btn{
+                    
+                }
+    
+                .save-btn{
+                   
+                }
+    
+                .delete-btn{
+                   
+                }
+    
+    
+            }
+    
+        }
+    
+    
+    }
+
+}

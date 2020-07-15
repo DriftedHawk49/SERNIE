@@ -1,0 +1,37 @@
+
+<div class="container">
+
+<div class="container-card">
+
+    <h2>Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitHandler()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Or Email</mat-label>
+      <input formControlName="username" matInput required type="text">
+      <mat-error *ngIf="username.invalid&&username.touched">This field is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput required type="password">
+      <mat-error *ngIf="username.invalid&&username.touched">This field is required.</mat-error>
+    </mat-form-field>
+
+    <mat-radio-group required formControlName="identity">
+      <mat-radio-button value="Consumer">Consumer</mat-radio-button>
+      <mat-radio-button value="Service_Provider">Service Provider</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-checkbox formControlName="remember" color="primary">Remember Me</mat-checkbox>
+
+    <a routerLink="forgotpassword" class="forgot">Forgot Password ?</a>
+
+    <button matRipple class="login-button">Go ></button>
+
+    <a class="register" routerLink="register">Not Registered Yet ? Register Now !</a>
+    
+    </form>
+  </div>
+
+</div>
