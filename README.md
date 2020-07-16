@@ -26,7 +26,7 @@ An application platform on which service providers like painters, carpenters, el
 - mongoDB : https://www.mongodb.com/try/download/community
 
 ## How To Run
-Please Refer to Wiki of this Repository. 
+Please Refer to Wiki of this Repository. https://github.com/DriftedHawk49/SERNIE/wiki/How-to-Run
 
 ## Usage
 
