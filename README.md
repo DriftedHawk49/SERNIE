@@ -1,27 +1,37 @@
 # Sernie
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+An application platform on which service providers like painters, carpenters, electricians etc can be found in their neighbourhood of service, by the consumers. Also, this includes another module named SERNIE grocery, which gives grocery shops a platform to accept orders in their neighbourhood and distribute them using their own logistics. 
 
-## Development server
+## Technologies Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Frontend : Angular 8
+Backend : NodeJS
+Database : MongoDB (NoSQL)
 
-## Code scaffolding
+## Libraries Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Frontend
+Google Maps Typescript API : For accessing Google Maps
+Google Maps Distance Matrix API
 
-## Build
+### Backend
+Mongoose : For accessing MongoDB server
+ExpressJS : For building Web server
+Socket.io : For building socket server
+bcryptjs : for hashing of passwords
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Pre-requisites to run the project
+- NodeJS Latest Version : https://nodejs.org/en/download/
+- Angular 8 : https://angular.io/
+- mongoDB : https://www.mongodb.com/try/download/community
 
-## Running unit tests
+## How To Run
+Please Refer to Wiki of this Repository. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+This Project is already submitted as a final year project for award of B.Tech Degree. Although it is free to use and open for contributions, one should avoid copying this work and submit it for award of any degrees.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contributing
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can contribute by refining the functions defined in this project, and add more modules to extend the functionality and scope of this application platform. 
