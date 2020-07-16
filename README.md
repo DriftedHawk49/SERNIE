@@ -4,21 +4,21 @@ An application platform on which service providers like painters, carpenters, el
 
 ## Technologies Used
 
-Frontend : Angular 8
-Backend : NodeJS
-Database : MongoDB (NoSQL)
+- Frontend : Angular 8
+- Backend : NodeJS
+- Database : MongoDB (NoSQL)
 
 ## Libraries Used
 
 ### Frontend
-Google Maps Typescript API : For accessing Google Maps
-Google Maps Distance Matrix API
+- Google Maps Typescript API : For accessing Google Maps
+- Google Maps Distance Matrix API
 
 ### Backend
-Mongoose : For accessing MongoDB server
-ExpressJS : For building Web server
-Socket.io : For building socket server
-bcryptjs : for hashing of passwords
+- Mongoose : For accessing MongoDB server
+- ExpressJS : For building Web server
+- Socket.io : For building socket server
+- bcryptjs : for hashing of passwords
 
 ## Pre-requisites to run the project
 - NodeJS Latest Version : https://nodejs.org/en/download/
