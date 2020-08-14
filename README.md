@@ -28,6 +28,9 @@ An application platform on which service providers like painters, carpenters, el
 ## How To Run
 Please Refer to Wiki of this Repository. https://github.com/DriftedHawk49/SERNIE/wiki/How-to-Run
 
+## Screenshots
+Check out Application Screenshots here : https://github.com/DriftedHawk49/SERNIE/wiki
+
 ## Usage
 
 This Project is already submitted as a final year project for award of B.Tech Degree. Although it is free to use and open for contributions, one should avoid copying this work and submit it for award of any degrees.
