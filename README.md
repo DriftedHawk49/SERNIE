@@ -25,6 +25,10 @@ An application platform on which service providers like painters, carpenters, el
 - Angular 8 : https://angular.io/
 - mongoDB : https://www.mongodb.com/try/download/community
 
+## About
+
+Read more about it here : https://github.com/DriftedHawk49/SERNIE/wiki/About
+
 ## How To Run
 Please Refer to Wiki of this Repository. https://github.com/DriftedHawk49/SERNIE/wiki/How-to-Run
 
